@@ -1,0 +1,17 @@
+.sprite {
+    background-image: url(./picture/spritesheet.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.sprite-cart {
+    width: 20px;
+    height: 17px;
+    background-position: -5px -5px;
+}
+
+.sprite-find {
+    width: 20px;
+    height: 20px;
+    background-position: -35px -5px;
+}
