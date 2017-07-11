@@ -1,0 +1,48 @@
+.layout {
+    /*border: 1px solid;*/
+    width: 600px;
+    margin: 0 auto;
+}
+
+.layout > div {
+    margin-top: 30px;
+}
+
+.h-alert {
+    color: #fff;
+    padding: 1px 16px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.h-alert .close {
+    text-decoration: none;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.h-alert > h3 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.success {
+    background-color: green;
+}
+
+.info {
+    background-color: blue;
+
+}
+
+.danger {
+    background-color: red;
+}
+
+.waring {
+    background-color: orange;
+
+}
+

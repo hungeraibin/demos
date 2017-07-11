@@ -1,0 +1,70 @@
+body {
+    font-family: arial;
+}
+
+.layout {
+    width: 600px;
+    margin: 30px auto;
+}
+
+.h-card {
+    padding-bottom: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.h-card > h2 {
+    background-color: #009688;
+    color: #fff;
+    padding: 15px 16px;
+}
+
+.h-card form {
+    margin: 16px;
+}
+
+.h-card label {
+    color: #757575;
+    vertical-align: middle;
+}
+
+.h-card input[type=text],
+.h-card textarea {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #757575;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.h-card input[type=text]:focus,
+.h-card textarea:focus {
+    outline: none;
+}
+
+.h-card form > div {
+    margin-top: 16px;
+}
+
+.h-card .half {
+    float: left;
+    width: 50%;
+    line-height: 1.4;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.h-card input[type=submit] {
+    color: #fff;
+    background-color: #009688;
+    padding: 8px 16px;
+    border: none;
+}
+
+/*.context {*/
+/*clear: both;*/
+/*}*/
+

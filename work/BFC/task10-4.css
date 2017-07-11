@@ -1,0 +1,53 @@
+body {
+    font-family: arial;
+}
+
+.layout {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.layout .h-navbar {
+    background-color: #f1f1f1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)!important;
+}
+
+.layout .h-navbar > li {
+    float: left;
+    position: relative;
+}
+
+.layout .h-navbar::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.layout .h-navbar li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.layout .h-navbar a:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+
+.layout .h-navbar .children {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)!important;
+}
+
+.layout .h-navbar > li:hover .children {
+    display: block;
+}

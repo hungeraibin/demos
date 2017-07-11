@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单效果</title>
+    <link rel="stylesheet" href="task10-2.css">
+</head>
+<body>
+<div class="layout">
+
+    <div class="h-card">
+        <h2>信息收集表</h2>
+        <form action="#" method="post">
+            <div>
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="qq">QQ</label>
+                <input type="text" id="qq" name="qq">
+            </div>
+            <div>
+                <label for="words">要说的话</label>
+                <textarea name="words" id="words" cols="30" rows="4"></textarea>
+            </div>
+            <div class="clearfix">
+                <div class="half">
+                    <input type="checkbox" id="milk" name="drinks" value="milk" checked>
+                    <label for="milk">Milk</label>
+                    <br>
+                    <input type="checkbox" id="sugar" name="drinks" value="sugar">
+                    <label for="sugar">Sugar</label>
+                    <br>
+                    <input type="checkbox" id="lemon" name="drinks" value="lemon">
+                    <label for="lemon">Lemon</label>
+                </div>
+                <div class="half">
+                    <input type="radio" id="male" name="sex" value="male" checked>
+                    <label for="male">Male</label>
+                    <br>
+                    <input type="radio" id="female" name="sex" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <!--<div class="context"></div>-->
+            </div>
+            <div>
+                <input type="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
