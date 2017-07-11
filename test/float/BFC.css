@@ -1,0 +1,16 @@
+.ct {
+    background-color: chartreuse;
+    margin: 10px;
+    /*border: 1px solid red;*/
+    /*padding: 1px;*/
+    /*overflow: hidden;*/
+    /*float: left;*/
+    display: inline-block;
+}
+
+
+.ct h1 {
+   background-color: aqua;
+    margin: 40px;
+
+}

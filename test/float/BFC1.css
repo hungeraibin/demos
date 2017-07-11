@@ -1,0 +1,17 @@
+.ct {
+    border: 1px solid red;
+    width: 600px;
+}
+
+.aside {
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    float: left;
+}
+
+.content {
+    background: orange;
+    overflow: hidden;
+    /*margin-left: 60px;*/
+}

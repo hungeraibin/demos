@@ -1,0 +1,23 @@
+.ct {
+    border: 1px solid red;
+
+}
+
+.box1 {
+    width: 60px;
+    height: 30px;
+    background-color: chartreuse;
+    float: left;
+}
+
+.box2 {
+    height: 300px;
+    background-color: yellow;
+    float: left;    ;
+}
+.clear {
+    clear: both;
+}
+.box3 {
+    background-color: blueviolet;
+}

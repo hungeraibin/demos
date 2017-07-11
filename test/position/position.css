@@ -1,0 +1,18 @@
+html {
+    border: 5px solid red;
+    padding: 50px;
+}
+
+body {
+    border: 10px solid blue;
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background: yellow
+;
+}

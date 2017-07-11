@@ -1,0 +1,21 @@
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.box:nth-child(1) {
+    background-color: red;
+    float: left;
+}
+
+.box:nth-child(2) {
+    background-color: chartreuse;
+    float: left;
+    clear: left;
+}
+
+.box:nth-child(3) {
+    background-color: blue;
+    float: left;
+    clear: left;
+}

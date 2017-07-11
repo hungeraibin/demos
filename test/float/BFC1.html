@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <link rel="stylesheet" href="BFC1.css">
+</head>
+<body>
+    <div class="ct">
+        <div class="aside"></div>
+        <div class="content">
+            BFC会阻止垂直外边距（margin-top、margin-bottom）折叠
+
+            按照BFC的定义，只有同属于一个BFC时，两个元素才有可能发生垂直Margin的重叠，这个包括相邻元素，嵌套元素，只要他们之间没有阻挡(例如边框，非空内容，padding等)就会发生margin重叠。
+            因此要解决margin重叠问题，只要让它们不在同一个BFC就行了，但是对于两个相邻元素来说，意义不大，没有必要给它们加个外壳，但是对于嵌套元素来说就很有必要了，只要把父元素设为BFC就可以了。这样子元素的margin就不会和父元素的margin发生重叠
+            BFC不会重叠浮动元素
+
+            BFC可以包含浮动
+        </div>
+    </div>
+</body>
+</html>
