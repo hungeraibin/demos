@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex属性</title>
+    <style>
+        .parent {
+            width: 500px;
+            background-color: #dddddd;
+            display: flex;
+            /*flex-direction: column;*/
+            /*flex-wrap: wrap;*/
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .child {
+            width: 100px;
+            background-color: white;
+            margin: 10px;
+        }
+
+        .child:nth-child(3) {
+            align-self: flex-end;
+        }
+
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="child">
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+        1 <br>
+    </div>
+    <div class="child">
+        2 <br>
+        2 <br>
+        2 <br>
+    </div>
+    <div class="child">
+        3
+    </div>
+</div>
+</body>
+</html>

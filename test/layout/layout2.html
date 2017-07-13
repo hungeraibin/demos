@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局</title>
+    <style>
+
+        #content::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .aside {
+            background-color: aqua;
+            width: 200px;
+            height: 500px;
+            float: left;
+        }
+
+        .main {
+            margin-left: 210px;
+            background-color: chartreuse;
+            height: 400px;
+        }
+
+        #footer {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="aside">aside</div>
+        <div class="main">content</div>
+    </div>
+<div id="footer">footer</div>
+</body>
+</html>

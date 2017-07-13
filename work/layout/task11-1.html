@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一栏布局</title>
+    <style>
+
+        body {
+            /*background-color: cornflowerblue;   */
+            background: #1296DB url("background.jpg") 0 0 no-repeat;
+            background-size: 100%;
+        }
+
+        #topbar {
+            max-width: 500px;
+            margin: 30px auto;
+            /*border: 1px solid #cccccc;*/
+            padding: 10px 8px;
+        }
+
+        .inner {
+            display: flex;
+            justify-content: center;
+        }
+
+        .inner a {
+            text-decoration: none;
+            color: white;
+            padding: 4px 20px;
+            border: 1px solid;
+        }
+
+        .inner a:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+
+        .inner a:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+
+        .wrapper {
+            display: flex;
+        }
+
+        .wrapper aside {
+            min-width: 100px;
+            min-height: 200px;
+        }
+
+        .wrapper main {
+            flex-grow: 1;
+            /*border: 1px solid;*/
+        }
+
+        #ad {
+            width: 100px;
+        }
+
+        aside ul {
+            /*margin: 0;*/
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        aside ul li {
+            color: #dddddd;
+            border: 1px solid #cccccc;
+            border-radius: 16px;
+            padding: 16px 32px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+
+        .picture {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+        }
+
+        .ruoyu,
+        .fang,
+        .tom,
+        .huang {
+            max-width: 200px;
+            box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2),0 4px 12px 0 rgba(0,0,0,0.19);
+        }
+
+        .picture .introduce {
+            padding: 8px 16px;
+
+        }
+
+        #ad .contact {
+            color: #dddddd;
+            font-size: 16px;
+            min-height: 70px;
+            text-align: center;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .last .comment {
+             margin: 20px;
+            padding: 0 16px;
+        }
+
+        .last .head {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .last .name {
+            margin: 0 16px;
+            font-size: 14px;
+            color: #757575;
+        }
+
+        .last span {
+            border: 1px solid #db26c5;
+            padding: 5px 10px;
+            margin: 0 6px;
+            border-radius: 6px;
+            color: #db26c5;
+        }
+
+        footer {
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="topbar">
+    <div class="inner">
+        <a href="#">首页</a>
+        <a href="#">课程</a>
+        <a href="#">直播</a>
+        <a href="#">用户</a>
+        <a href="#">更多</a>
+    </div>
+</div>
+<div class="wrapper">
+    <aside>
+        <ul>
+            <li>若愚</li>
+            <li>芳芳</li>
+            <li>Tom</li>
+            <li>Slash</li>
+        </ul>
+    </aside>
+    <main>
+        <div class="picture">
+            <div class="ruoyu">
+                <img src="ruoyu.png" alt="若愚">
+                <div class="introduce">若愚，北航计算机硕士，曾任职于百度LBS搜索研发部、阿里巴巴B2B技术部，开发过百度地图、阿里巴巴中文站等产品，擅长CSS3、HTML5、nodejs。</div>
+            </div>
+            <div class="fang">
+                <img src="fang.png" alt="方方">
+                <div class="introduce">方应杭，资深前端开发、饥人谷资深前端讲师。华中科技大学毕业，毕业后先后在腾讯、阿里巴巴和彩程任职。</div>
+            </div>
+            <div class="tom">
+                <img src="tom.png" alt="Tom">
+                <div class="introduce">Tom，中山大学毕业，曾在淘宝无线事业部，从事手机淘宝前端开发工作。</div>
+            </div>
+            <div class="huang">
+                <img src="huang.png" alt="slashhuang">
+                <div class="introduce">slashhuang，毕业于南京大学，曾在大众点评负责B2B平台及前端UI框架开发，擅长react / vue / node / webpack / babel等。</div>
+            </div>
+        </div>
+    </main>
+    <div id="ad">
+        <div class="contact">联系我们</div>
+        <div class="contact">墨凌 317757696</div>
+        <div class="contact">夏夏 1678333634</div>
+        <div class="contact">青青 2054185664</div>
+    </div>
+
+</div>
+<div class="last">
+    <div class="comment">
+        <div class="head">
+            <img src="head.png" alt="美女">
+            <div class="name">前小端</div>
+            <div class="name">1 miniues ago</div>
+        </div>
+
+        <h2>饥人谷学员评论</h2>
+        <p>好困呀，该睡觉了。欢迎加入饥人谷。晚上0：50</p>
+        <span>励志</span> <span>前端</span>  <span>BAT大牛</span> <span>饥人谷</span>
+    </div>
+</div>
+<footer>
+    <p>饥人谷爱彬 2017年7月14日1：00</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏布局</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .wrapper {
+            border: 1px solid;
+        }
+        aside {
+            width: 120px;
+            min-height: 500px;
+            background: #cccccc;
+            border: 1px solid;
+            float: left;
+        }
+
+        #ad {
+            width: 150px;
+            min-height: 500px;
+            background: #cccccc;
+            border: 1px solid;
+            float: right;
+        }
+
+        main {
+            min-height: 400px;
+            background-color: #666666;
+            border: 1px solid;
+            margin-left: 130px;
+            margin-right: 160px;
+        }
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper clearfix">
+        <aside></aside>
+        <div id="ad"></div>
+        <main></main>
+    </div>
+    <footer>页脚</footer>
+</body>
+</html>

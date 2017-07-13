@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid red;
+            display: flex;
+        }
+
+        aside {
+            width: 100px;
+            min-height: 300px;
+            border: 1px solid green;
+        }
+
+        main {
+            min-height: 500px;
+            border: 1px solid blue;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <aside>aside</aside>
+    <main>main</main>
+</div>
+
+</body>
+</html>

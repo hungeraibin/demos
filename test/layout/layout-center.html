@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout Bin</title>
+    <style>
+        .layout {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        #header {
+            background-color: #eee;
+            text-align: center;
+            font-size: 0px;
+            padding: 10px;
+        }
+
+        #header .btn {
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-right: none;
+            font-size: 14px;
+            color: black;
+            text-decoration: none;
+            padding: 5px 8px;
+
+        }
+
+        #header .btn:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+
+        #header .btn:last-child {
+            border-right: 1px solid #ccc;
+            border-radius: 0 5px 5px 0;
+        }
+
+        #content {
+            background-color: aqua;
+            height: 400px;
+        }
+
+        #footer {
+            background-color: chocolate;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="header">
+    <a href="#" class="btn">HTML</a>
+    <a href="#" class="btn">CSS</a>
+    <a href="#" class="btn">JavaScript</a>
+</div>
+<div id="content" class="layout">内容</div>
+<div id="footer" class="layout">尾部</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无间隙居中</title>
+    <style>
+
+        .parent {
+            border: 1px solid red;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding: 10px 0;
+            /*font-size: 0;*/
+        }
+
+        span {
+            border: 1px solid green;
+            /*display: inline-block;*/
+            /*font-size: 16px;*/
+            float: left;
+        }
+        .child {
+            display: inline-block;
+        }
+        .clearfix::after {
+            content: '';
+            display: inline-block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child clearfix">
+            <span>确定</span>
+            <span>取消</span>
+        </div>
+
+    </div>
+</body>
+</html>

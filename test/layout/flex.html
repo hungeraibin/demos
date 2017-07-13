@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #topbar {
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        #topbar .inner {
+            max-width: 800px;
+            border: 1px solid blue;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #topbar .logo {
+            width: 40px;
+            height: 40px;
+            background-color: #666666;
+        }
+
+        #topbar .slogan {
+            flex-grow: 1;
+        }
+
+        main {
+            border: 1px solid red;
+            max-width: 800px;
+            min-height: 100px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+<body>
+<div id="topbar">
+    <div class="inner">
+        <div class="logo">
+
+        </div>
+        <div class="slogan">
+            hi
+        </div>
+        <div class="buttons">
+            <a href="#">登陆</a>
+            <a href="#">注册</a>
+        </div>
+    </div>
+</div>
+<main></main>
+</body>
+</html>

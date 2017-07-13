@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex三栏布局</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .wrapper {
+            border: 1px solid;
+            display: flex;
+        }
+        aside {
+            width: 120px;
+            min-height: 500px;
+            background: #cccccc;
+            border: 1px solid;
+            order: 1;
+            flex-shrink: 0;
+        }
+
+        #ad {
+            width: 150px;
+            min-height: 500px;
+            background: #cccccc;
+            border: 1px solid;
+            order: 3;
+            flex-shrink: 0;
+        }
+
+        main {
+            min-height: 400px;
+            min-width: 400px;
+            background-color: #666666;
+            border: 1px solid;
+            flex-grow: 1;
+            order: 2;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <aside></aside>
+    <main></main>
+    <div id="ad"></div>
+</div>
+<footer>页脚</footer>
+</body>
+</html>

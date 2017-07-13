@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PC页面布局</title>
+    <style>
+        header {
+            height: 50px;
+            background-color: #cccccc;
+        }
+
+        footer {
+            height: 50px;
+            background-color: #cccccc;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        .content aside {
+
+            width: 120px;
+            background-color: aqua;
+        }
+
+        .content main {
+            height: 400px;
+            flex-grow: 1;
+            background-color: chartreuse;
+        }
+
+        .content nav {
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <div class="content">
+        <aside></aside>
+        <main></main>
+        <nav></nav>
+    </div>
+
+    <footer></footer>
+</body>
+</html>
