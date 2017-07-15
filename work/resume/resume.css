@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('./icon/iconfont.eot?t=1500129425994'); /* IE9*/
+    src: url('./icon/iconfont.eot?t=1500129425994#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./icon/iconfont.woff?t=1500129425994') format('woff'), /* chrome, firefox */ url('./icon/iconfont.ttf?t=1500129425994') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('./icon/iconfont.svg?t=1500129425994#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-email:before {
+    content: "\e605";
+}
+
+.icon-phone:before {
+    content: "\e622";
+}
+
+.icon-add:before {
+    content: "\e60f";
+}
+
+.icon-blog:before {
+    content: "\e795";
+}
+
+.icon-daqiashise:before {
+    content: "\e6ed";
+}
+
+.wrapper {
+    width: 700px;
+    background-color: #ddd;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.wrapper header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+header .description {
+    margin-left: -100px;
+}
+
+.description .name {
+    font-size: 24px;
+}
+
+.description .position {
+    font-weight: bolder;
+    margin-top: -20px;
+}
+
+header .contacts h3 {
+    border-bottom: 4px solid;
+    padding-bottom: 3px;
+}
+
+.contacts ul {
+    line-height: 25px;
+}
+
+h3 {
+    border-bottom: 1px solid #acadac;
+    display: inline-block;
+    padding: 0 180px 10px 0;
+}
+
+.work,
+.education {
+    border-left: 1px solid;
+    padding-left: 60px;
+}
+
+main .experience {
+    line-height: 26px;
+}
+
+main .experience::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border-radius: 4px;
+    position: relative;
+    left: -65px;
+}
+
+main .experience span:nth-child(2) {
+    color: #acadac;
+}
+
+main .experience .state {
+    color: #acadac
+}
+
+.wrapper footer {
+    display: flex;
+}
+
+footer .extra {
+    width: 300px;
+    padding-left: 60px;
+    line-height: 26px;
+    margin-right: 40px;
+}
+
+footer .extra .iconfont {
+    position: relative;
+    left: -68px;
+}
+
+footer .move {
+    margin-left: -20px;
+}
+
+footer .ability {
+    display: flex;
+    flex-direction: column;
+    width: 310px;
+    height: 200px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.ability li {
+    margin-bottom: 40px;
+
+}
+
+
+
+
+
+
