@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>两栏布局</title>
+    <title>图片列表</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    h1 {
+        max-width: 630px;
+        border-bottom: 1px solid #cccccc;
+        text-align: center;
+        margin: 30px auto;
+        color: #333333;
+        padding: 10px;
+    }
+    main {
+        max-width: 630px;
+        margin: auto;
+    }
+    img {
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
+        opacity: 0.75;
+    }
+
+    p {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    li {
+        box-shadow: 5px 10px 8px 0 rgba(0,0,0,0.19);
+    }
+</style>
+
 <body>
+    <header>
+        <h1>风景列表</h1>
+    </header>
+        <main>
+            <ul>
+                <li>
+                    <img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="">
+                    <p>风景如画</p>
+                </li>
+                <li><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt=""> <p>风景如画</p></li>
+                <li><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt=""> <p>风景如画</p></li>
+                <li><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt=""> <p>风景如画</p></li>
+                <li><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt=""> <p>风景如画</p></li>
+                <li><img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt=""> <p>风景如画</p></li>
+
+            </ul>
+        </main>
 
 </body>
 </html>

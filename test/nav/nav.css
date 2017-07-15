@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    color: #333333;
+    background-color: #f5f8fa;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+
+}
+
+/*#siteNavigator {*/
+/*background-color: #f0f0f0;*/
+/*}*/
+
+#siteNavigator .phone {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    #siteNavigator .phone {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    #siteNavigator > ul {
+        display: none;
+    }
+}
+
+#siteNavigator > ul > li {
+    float: left;
+    position: relative;
+    border: 1px solid #dddddd;
+    border-left: none;
+}
+
+@media (max-width: 400px) {
+    #siteNavigator > ul > li {
+        float: none;
+    }
+}
+
+#siteNavigator > ul > li:first-child {
+    border-left: 1px solid #dddddd;
+}
+
+#siteNavigator > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 20px;
+    z-index: 2;
+    position: relative;
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 400px) {
+    #siteNavigator > ul > li > a {
+        display: block;
+    }
+}
+
+#siteNavigator > ul > li:hover a {
+    background-color: #ffffff;
+}
+
+/*#siteNavigator > ul > li > a:hover+.sub-menu {*/
+/*display: block;*/
+/*}*/
+
+#siteNavigator > ul > li:hover .sub-menu {
+    /*display: block;*/
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#siteNavigator > ul .sub-menu > li:hover {
+    background-color: #eeeeee;
+}
+
+#siteNavigator ul .sub-menu {
+    /*display: none;*/
+    z-index: 1;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20%);
+    background-color: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    border: 1px solid #dddddd;
+
+}
+
+#siteNavigator ul .sub-menu > li {
+    padding: 12px 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    width: 6em;
+}

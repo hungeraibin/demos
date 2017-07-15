@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>flex通栏</title>
     <style>
         body {
             margin: 0;
@@ -20,6 +20,7 @@
             margin-right: auto;
             display: flex;
             align-items: center;
+            /*justify-content: space-around;*/
         }
 
         #topbar .logo {
@@ -30,6 +31,7 @@
 
         #topbar .slogan {
             flex-grow: 1;
+            border: 1px solid;
         }
 
         main {
@@ -50,7 +52,7 @@
 
         </div>
         <div class="slogan">
-            hi
+            <span>hello</span>
         </div>
         <div class="buttons">
             <a href="#">登陆</a>

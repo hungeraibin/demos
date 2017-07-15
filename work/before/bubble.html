@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubble</title>
+    <style>
+
+
+        .box {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin-top: 30px;
+        }
+        .bubble:before {
+            content:'';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: 16px solid transparent;
+            border-left: 16px solid transparent;
+            border-bottom: 16px solid #ddd;
+            border-right: 16px solid transparent;
+            position: absolute;
+            top: -32px;
+            left: 6px;
+
+        }
+        .bubble2:before {
+            content:'';
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-top: 10px solid red;
+            border-left: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid red;
+            position: absolute;
+            left: 181px;
+        }
+        .bubble3:before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            background-color: #fff;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box bubble"></div>
+    <div class="box bubble2"></div>
+    <div class="box bubble3"></div>
+</body>
+</html>
