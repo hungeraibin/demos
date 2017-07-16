@@ -122,6 +122,10 @@ main .experience .state {
     color: #acadac
 }
 
+.extra h3 {
+    margin-left: -60px;
+}
+
 .wrapper footer {
     display: flex;
 }
