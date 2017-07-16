@@ -110,9 +110,8 @@ main .experience::before {
     background-color: #000;
     border-radius: 4px;
     position: relative;
-    left: -65px;
     top: 16px;
-
+    left: -65px;
 }
 
 main .experience span:nth-child(2) {
