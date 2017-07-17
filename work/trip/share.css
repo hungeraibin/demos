@@ -20,6 +20,7 @@
     position: relative;
     padding-bottom: 125px;
 }
+
 #share-wrapper li::after {
     content: '';
     display: block;
@@ -31,6 +32,7 @@
     margin-left: -1px;
     height: 100%;
 }
+
 #share-wrapper .community {
     position: absolute;
     top: 0;
@@ -45,9 +47,11 @@
     margin-left: 110px;
     text-align: left;
 }
+
 #share-wrapper li:last-child {
     padding-bottom: 0;
 }
+
 #share-wrapper .story {
     width: 160px;
     height: 160px;
@@ -55,11 +59,12 @@
     border: 7px solid #f1f1f1;
     background-color: #fed136;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     color: #fff;
 
 }
-.story h3:first-child{
+
+.story h3:first-child {
     margin-top: 40px;
 
 }

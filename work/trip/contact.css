@@ -20,7 +20,7 @@
 }
 
 #contact-wrapper input[type=text] {
-    display:inline-block;
+    display: inline-block;
     width: 420px;
     margin: 14px;
     padding: 19px;
@@ -70,7 +70,7 @@ footer {
 }
 
 footer .copyright {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 footer .transmit a {
@@ -91,6 +91,7 @@ footer .transmit a:nth-of-type(3) {
     color: #fed136;
     text-decoration: none;
 }
+
 .friendship a:hover {
     text-decoration: underline;
 }

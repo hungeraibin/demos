@@ -8,7 +8,7 @@ p {
     font-size: 16px;
     font-style: italic;
     color: #777;
-    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #scenery-wrapper ul {
@@ -20,17 +20,18 @@ p {
     justify-content: space-between;
     margin-top: 60px;
 }
+
 #scenery-wrapper ul li {
     background-color: #fff;
     margin-bottom: 50px;
 }
+
 #scenery-wrapper img {
     max-width: 350px;
     min-height: 230px;
 }
 
-#scenery-wrapper li p:nth-of-type(1)
-{
+#scenery-wrapper li p:nth-of-type(1) {
     color: #000;
     font-weight: 800;
     font-style: normal;
@@ -42,6 +43,6 @@ p {
     cursor: pointer;
     background-color: #fed136;
     opacity: .8;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2), 0 8px 12px 0 rgba(0,0,0,0.19)
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 12px 0 rgba(0, 0, 0, 0.19)
 }
 
