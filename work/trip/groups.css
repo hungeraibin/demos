@@ -1,0 +1,72 @@
+
+@font-face {font-family: "iconfont";
+    src: url('icfont/iconfont.eot?t=1500222340302'); /* IE9*/
+    src: url('icfont/iconfont.eot?t=1500222340302#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('icfont/iconfont.woff?t=1500222340302') format('woff'), /* chrome, firefox */
+    url('icfont/iconfont.ttf?t=1500222340302') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('icfont/iconfont.svg?t=1500222340302#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont",sans-serif !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github-copy:before { content: "\e62f"; }
+
+.icon-weixin:before { content: "\e603"; }
+
+.icon-qq-copy:before { content: "\e656"; }
+
+
+
+#groups-wrapper {
+    text-align: center;
+    padding: 90px 0;
+    background-color: #f7f7f7;
+}
+
+#groups-wrapper ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 70px auto;
+}
+
+#groups-wrapper ul img {
+    border-radius: 50%;
+    border: 7px solid #f1f1f1;
+}
+
+#groups-wrapper ul h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: normal;
+}
+
+#groups-wrapper ul p {
+    font-size: 14px;
+    margin-top: -18px;
+    margin-bottom: -4px;
+}
+#groups-wrapper ul a {
+    font-size: 40px;
+    text-decoration: none;
+    color: #333;
+}
+#groups-wrapper ul a:nth-of-type(3) {
+    font-size: 36px;
+}
+
+#groups-wrapper ul a:hover {
+    color: #fed136;
+}
+#groups-wrapper > p {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
