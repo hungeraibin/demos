@@ -8,6 +8,7 @@ p {
     font-size: 16px;
     font-style: italic;
     color: #777;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 #scenery-wrapper ul {

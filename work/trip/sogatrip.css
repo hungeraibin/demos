@@ -32,7 +32,7 @@ h3 {
 /*topvar content*/
 #head-wrapper {
     max-width: 100%;
-    min-height: 1000px;
+    min-height: 960px;
     border: 1px solid white;
     background: url("img/travel.png") 0 0 no-repeat;
     background-size: 100%;
@@ -79,7 +79,7 @@ header p:nth-child(1) {
     color: #333;
     font-size: 40px;
     line-height: 40px;
-    margin-top: 280px;
+    margin-top: 200px;
 }
 
 header p:nth-child(2) {
