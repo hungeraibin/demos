@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理</title>
+    <style>
+        .container {
+            margin: 30px auto;
+            width: 900px;
+        }
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul {
+            background-color: pink;
+        }
+        .container li {
+            border: 1px solid #ccc;
+            line-height: 1.5;
+            margin-right: 50px;
+        }
+        #show {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul>
+        <li>aa</li>
+        <li>bb</li>
+        <li>cc</li>
+        <li>dd</li>
+    </ul>
+    <label for="add-ipt"></label>
+    <input type="text" id="add-ipt">
+    <button id="btn">添加</button>
+    <div id="show"></div>
+</div>
+<script>
+//    var liNodes = document.querySelectorAll('.container li');
+    var showNode = document.querySelector('#show');
+    var btnNode = document.querySelector('#btn');
+    var addiptNode = document.querySelector('#add-ipt');
+    var ulNode = document.querySelector('.container ul');
+
+    //事件代理 利用事件冒泡，把事件监听，绑定到容器上。 应用：新增元素需要绑定事件。
+    ulNode.addEventListener('click', function (e) {
+        var target = e.target;
+        //   console.log(target.tagName);
+        if (target.tagName.toLowerCase() === 'li') {
+            showNode.innerText = target.innerText;
+        }
+    });
+    btnNode.addEventListener('click', function () {
+        var node = document.createElement('li');
+        node.innerText = addiptNode.value;
+        ulNode.appendChild(node);
+    });
+
+    /*
+    liNodes.forEach(function (node) {
+        console.log(node);
+        node.addEventListener('click', function () {
+            showNode.innerText = this.innerText;
+        });
+    });
+    btnNode.addEventListener('click', function () {
+        var node = document.createElement('li');
+        node.innerText = addiptNode.value;
+        node.addEventListener('click', function () {
+            showNode.innerText = this.innerText;
+        });
+        ulNode.appendChild(node);
+    });
+    */
+
+
+</script>
+</body>
+</html>

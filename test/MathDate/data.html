@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+<script>
+    Date.now();
+    Date.parse('2017-7-27');
+    d = new Date();
+
+    //1.获取当前时间到指定日期的间隔时间
+    function getChIntv(dateStr) {
+        var targetDate = new Date(dateStr);
+        var curDate = new Date;
+        var offset = Math.abs(targetDate - curDate);
+
+        var totalSeconds = Math.floor(offset/1000);
+        var seconds = totalSeconds % 60;
+        var totalMinutes = Math.floor(totalSeconds / 60);
+        var minutes = totalMinutes % 60;
+        var totalHours = Math.floor(totalMinutes / 60);
+        var hours = totalHours % 24;
+        var totalDays = Math.floor(totalHours / 24);
+
+        return totalDays + '天' + hours + '小时' + minutes + '分钟' + seconds + '秒';
+    }
+
+    console.log(getChIntv('2017-02-16'));
+
+    //判断一年是否为闰年
+    function assert_epual(a, b) {
+        if (a === b) {
+            console.log('equal');
+        } else {
+            console.error('not equal');
+            console.log('左边是:', a, '类型是:', typeof a);
+            console.log('右边是:', b, '类型是:', typeof b);
+        }
+    }
+
+    function isLeapYear(year) {
+        var d = new Date(year, 1, 29);
+        return d.getDate() === 29;
+     //   console.log(d.getDate());
+    }
+
+    assert_epual(isLeapYear(2000), true);
+    assert_epual(isLeapYear(2001), true);
+
+    //月份对应天数也简单
+    //把时间调到那个月的下个月第一天，然后往回拨一秒，获取那时的日期就行了：
+    function MonthDate(year, month) {
+        var d = new Date(year, month, 1, 0,0,0);
+        var beforeDay = new Date(d - 1000);
+        return beforeDay.getDate();
+    }
+    console.log(MonthDate(2016, 2));
+</script>
+</body>
+</html>

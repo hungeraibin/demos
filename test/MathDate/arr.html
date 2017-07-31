@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ //   var a = new Array(1, 2, 3);
+    var arr = [2, 3, 4, 5];
+    arr.push(200);
+    arr.pop();
+    arr.shift();
+    arr.unshift(200);
+
+    arr.splice(2, 1); //删除
+    arr.splice(1, 1, 7,8,9); //删除添加
+    arr.splice(2, 0, 4,5,6); //添加
+
+    var arr1 = [-3, -6, 1, 8, 13, 22];
+    arr1.sort(function (a, b) {
+        return b - a ;
+    });
+    console.log(arr1);
+
+    var students = [
+        {name: 'a', age: 10},
+        {name: 'f', age: 16},
+        {name: 'c', age: 12},
+        {name: 'd', age: 21}
+    ];
+    students.sort(function (s1, s2) {
+      //  return s1.age - s2.age;
+        if(s1.name > s2.name) {
+            return 1;
+        }else {
+            return -1;
+        }
+    });
+
+    console.log(students);
+
+    //ES5
+    Array.isArray(arr);
+    arr.forEach(function (value, index) {
+        console.log(value, index);
+    });
+
+    var isPositive = arr.every(function (value) {
+        return value > 0;
+    });
+    console.log(isPositive);
+
+     var hasPositive = arr.some(function (value) {
+     return value > 0;
+     });
+     console.log(hasPositive);
+
+     var newArr = arr.map(function (value) {
+         return value * value;
+     });
+     console.log(newArr);
+     
+     var positiveArr = arr.filter(function (value) {
+         return value > 0;
+     });
+    console.log(positiveArr);
+
+    var students1 = [
+        {name: 'aibin', age: 18},
+        {name: 'ai', age: 20},
+        {name: 'bin', age: 19},
+        {name: 'ab', age: 21}
+    ];
+    var newStudents = students1.filter(function (student) {
+        return student.name.indexOf('a') > -1;
+    });
+    console.log(newStudents);
+
+    var a = [1, 2, 3, 4, 5, 6];
+    var aa = a.reduce(function (v1, v2) {
+        console.log(v1, v2);
+        return v1 + v2;
+    });
+    console.log(aa);
+</script>
+</body>
+</html>

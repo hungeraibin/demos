@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捕获与冒泡测试</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <button>点我</button>
+    </div>
+</div>
+<a id="link" href="http://baidu.com">link</a>
+
+<script>
+    document.body.addEventListener('click', function () {
+        console.log('body clicked...');
+    });
+    document.querySelector('.container').addEventListener('click', function () {
+        console.log('container clicked...');
+    });
+    document.querySelector('.box').addEventListener('click', function (e) {
+        e.stopPropagation();
+        console.log('box clicked...');
+    });
+    document.querySelector('.box button').addEventListener('click', function () {
+        console.log('button clicked...');
+    });
+
+    var link = document.querySelector('#link');
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log('hello');
+    });
+</script>
+</body>
+</html>

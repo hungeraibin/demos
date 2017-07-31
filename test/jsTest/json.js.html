@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+<script>
+    var obj1 = {
+        name: 'ruoyu',
+        age: 30,
+        '234': 'hello hi'
+    };
+
+    obj1.age = 88;
+
+    console.log(obj1.name);
+    console.log(obj1['234']);
+    for(var key in obj1){
+        console.log(key, ': ', obj1[key]);
+    }
+
+    var str = '{"name": "aibin", "age": 30}';
+    var obj = JSON.parse(str);
+    console.log(obj.name);
+    console.log(JSON.stringify(obj));
+
+    //1. 写一个函数，得到一个字符串里出现频率最高的一个字符
+    var str1 = 'hello world , jirengu hohohooooa';
+    var dict = {};
+    for(var i = 0; i < str1.length; i++){
+        if(dict[str1[i]]){
+            ++dict[str1[i]];
+        }
+        else{
+            dict[str1[i]] = 1;
+        }
+    }
+    console.log(dict);
+
+    var count = 0;
+    var maxValue;
+    for(key in dict){
+        if(dict[key] > count){
+            count = dict[key];
+            maxValue = key;
+        }
+    }
+    console.log(maxValue, count);
+</script>
+</body>
+</html>

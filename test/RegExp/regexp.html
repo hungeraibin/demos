@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+</head>
+<body>
+<script>
+    var rega = /[^abc123]/;
+    var reg2 = /[^abc123]/g;
+    //   var reg3 = /[0-9a-zA-Z_ ]/;
+    var str = 'kaha';
+    console.log(str.match(rega));
+    console.log(str.match(reg2));
+
+    var reg4 = /^h\dm/;
+    str4 = 'h3m h1m h2m';
+    console.log(str4.match(reg4));
+
+    var reg5 = /h\dm$/;
+    console.log(str4.match(reg5));
+
+    var str6 = '13652069670';
+    var reg6 = /^1\d{10}$/;
+    console.log(str6.match(reg6));
+
+    var str7 = 'hello wohellorld hello'; //wo-hello-rld
+    var reg7 = /hello/g;
+    console.log(str7.match(reg7));
+    var reg8 = /\bhello\b/g;
+    console.log(str7.match(reg8));
+
+    var str9 = 'a1234d5678cd';
+    var reg9 = /[a-z]\d?/g;
+    console.log(str9.match(reg9)); //贪婪模式
+    console.log(str9.match(/[a-z]\d??/g)); //非贪婪模式
+    var reg10 = /[a-z]\d+/g;
+    console.log(str9.match(reg10));
+    console.log(str9.match(/[a-z]\d+?/g)); //非贪婪模式
+    var reg11 = /[a-z]\d*/g;
+    console.log(str9.match(reg11));
+    console.log(str9.match(/[a-z]\d*?/g)); //非贪婪模式
+    var reg12 = /[a-z]\d{4}/g;
+    console.log(str9.match(reg12));
+    console.log(str9.match(/[a-z]\d{1,3}/g));
+    console.log(str9.match(/[a-z]\d{1,3}?/g)); //非贪婪模式
+
+    //分组
+    console.log('hellohello'.match(/hello{2,3}/g));
+    console.log('hellohello'.match(/(hello){2,3}/g));
+
+    var str13 = 'aibin123hello\naibin456\naibin789';
+    console.log(str13.match(/^aibin\d{3}/mg));
+
+    var reg14 = /hello/;
+    console.log(reg14.test('hello world'));
+    function isPhoneNumber1(str) {
+        return /^1\d{10}$/.test(str);
+    }
+    console.log(isPhoneNumber1('123'));
+
+    var str15 = 'hallo world hbllo ai hyllo bin';
+    var reg15 = /h[a-z]llo/g;
+    do {
+        var result = reg15.exec(str15);
+        console.log(result);
+    } while (result);
+
+    //  str15 = str15.replace(reg15, 'hello');
+    str15 = str15.replace(reg15, function (value) {
+        //   console.log(arguments);
+        return value[0].toUpperCase() + value.substr(1);
+    });
+    console.log(str15);
+
+    //1.去除两边的空白字符
+    function trim(str) {
+        return str.replace(/^\s+|\s+$/g, ''); //返回字符串
+    }
+    console.log(trim(' hello  '));
+
+    //2.输入是否是邮箱
+    function isEmail(str) {
+        return /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$/.test(str); //返回字符串
+    }
+    console.log(isEmail('aibin@gmail.com'));
+
+    //3.手机号
+    function isPhoneNumber(str) {
+        return /^1\d{10}$/.test(str);
+    }
+    console.log(isPhoneNumber('18888888888'));
+
+    //4.用户名
+    function isValidUsername(str) {
+        return /^\w{6,20}$/.test(str);
+    }
+    console.log(isValidUsername('ai_bin'));
+
+    //5.密码
+    function isValidPassword(str) {
+        if (!/^\w{6,20}$/.test(str)) {
+            return false;
+        } else if (/^[A-Z]{6,20}$|^[a-z]{6,20}$|^\d{6,20}$|^_{6,20}$/.test(str)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    console.log(isValidPassword('aiBin_1'));
+
+    //6.颜色
+    var reg = /#([0-9a-zA-z]{6}|[0-9a-zA-Z]{3})(?=;)/g;
+    var subj = "color: #121212; background-color: #AA00ef; width: 12px; bad-colors: f#fddee;";
+    console.log(subj.match(reg));  // 返回数组
+
+    //7.字符串中数字替换为平方
+    var string7 = '3的平方是9，6的平方是36';
+    string7 = string7.replace(/\d+/g, function (num) {
+        //console.log(typeof num);
+        return Math.pow(parseInt(num), 2);
+    });
+    console.log(string7);
+
+    //8.下面代码输出什么? 为什么? 改写代码，让其输出[""hunger"", ""world""].
+    var string = 'hello  "hunger" , hello "world"';
+    var pat = /".*?"/g;
+    console.log(string.match(pat));
+</script>
+</body>
+</html>

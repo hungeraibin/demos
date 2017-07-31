@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件兼容</title>
+</head>
+<body>
+<div class="box">
+    <button id="btnClick">click me</button>
+</div>
+
+<script>
+    var button = document.querySelector('button');
+    var box = document.querySelector('.box');
+    button.addEventListener('click', function (e) {
+        console.log(this);
+        console.log(this.innerText);
+        console.log(e.target);
+    });
+    box.addEventListener('click', function (e) {
+        console.log(this);
+        console.log(e.target);
+    });
+    //IE 2个参数，onclick，this指window，执行顺序不同
+    /*box.attachEvent('onclick', function (e) {
+        console.log(this); //window
+    })*/
+    //兼容addEvent this
+    function addEvent(node, type, handler) {
+        if (!node) {
+            return false;
+        }
+        if (node.addEventListener) {
+            node.addEventListener(type, handler, false);
+            return true;
+        } else if (node.attachEvent){
+            node['e' + type + handler] = handler;
+            node[type + handler] = function () {
+                node['e' + type + handler](window.event);
+            };
+            node.attachEvent('on' + type, node[type + handler]);
+            return true;
+        }
+        return false;
+    }
+    var node = document.getElementsByClassName('.box')[0];
+    addEvent(node, 'click', function (e) {
+        console.log(e);
+        console.log(this);
+    });
+
+    //事件对象
+    var handler = function () {
+        var e = window.event;
+        alert(e.type);
+    };
+    var btnClick = document.getElementById('btnClick');
+    btnClick.onclick = handler();
+
+    //简化封装
+    function $(node) {
+        return document.querySelector(node);
+    }
+    function $$(nodes) {
+        return document.querySelectorAll(nodes);
+    }
+    btnClick = $('#btnClick');
+    box = $$('.box');
+</script>
+</body>
+</html>

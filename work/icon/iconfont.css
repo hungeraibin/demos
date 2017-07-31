@@ -8,12 +8,14 @@
 
 .iconfont {
     font-family:"iconfont" !important;
-    font-size:100px;
-    color: #1296DB;
+   font-size:100px;
+   color: #1296DB;
     font-style:normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 .iconfont:hover {
     color: #db26c5;
@@ -21,3 +23,4 @@
 .icon-jirengulogored-copy:before { content: "\e60b"; }
 
 .icon-jirengulogored:before { content: "\e601"; }
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<script>
+    //1、数组方法里push、pop、shift、unshift、join、splice分别是什么作用？用 splice函数分别实现push、pop、shift、unshift方法
+    var arr = [1, 3, 5];
+    arr.splice(arr.length, 0, 200); //push
+    console.log(arr);
+
+    arr.splice(arr.length - 1, 1); //pop
+    console.log(arr);
+
+    arr.splice(0, 1);
+    console.log(arr); //shift
+
+    arr.splice(0, 0, 200); //unshift
+    console.log(arr);
+
+    //2、写一个函数，操作数组，数组中的每一项变为原来的平方，在原数组上操作
+    function squareArr(arr){
+        arr.forEach(function (e, i ,array) {
+            array[i] = Math.pow(e, 2);
+        })
+    }
+    var arr2 = [2, 4, 6];
+    squareArr(arr2);
+    console.log(arr2); // [4, 16, 36]
+
+    //3、写一个函数，操作数组，返回一个新数组，新数组中只包含正数，原数组不变
+    function filterPositive(arr){
+        return arr.filter(function (e) {
+            return typeof e === 'number' && e > 0;
+        });
+    }
+
+    var arr3 = [3, -1,  2,  '饥人谷', true];
+    var newArr = filterPositive(arr3);
+    console.log(newArr); //[3, 2]
+    console.log(arr3); //[3, -1,  2,  '饥人谷', true]
+
+
+</script>
+
+</body>
+</html>

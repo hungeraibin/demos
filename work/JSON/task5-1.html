@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work5</title>
+</head>
+<body>
+<script>
+    //1
+    var prod = {
+        name: '女装',
+        styles: ['短款', '冬季', '春装']
+    };
+    function getTpl(data) {
+        var str = '<dl class="product">';
+        str += '<dt>' + data.name + '</dt>';
+        for (var i = 0; i < data.styles.length; i++) {
+            str += '<dd>' + data.styles[i] + '</dd>';
+        }
+        str += '</dl>';
+        return str;
+    }
+
+    var result = getTpl(prod);  //result为下面的字符串
+    console.log(result);
+
+    //2
+    var str1 = 'abcdeabcde' +
+        'abcdeancdeabcde' +
+        'abcdeabcdeancde' +
+        'abcdeabcdeabcde' +
+        'ancdeabcdeabcde' +
+        'abcdeancde';
+    console.log(str1);
+
+var str2 = 'abcdeabcde\
+bcdeancdeabcde\
+abcdeabcdeancde\
+abcdeabcdeabcde\
+ancdeabcdeabcde\
+abcdeancde';
+    console.log(str2);
+
+    //3
+    var str3 = 'hello \\\\饥人谷';//补全代码
+        console.log(str3);
+
+    //4
+    var str4 = 'jirengu\nruoyu';
+    console.log(str4.length);//13 \是转义符  \n算一个字符
+
+     //5、写一个函数，判断一个字符串是回文字符串，如 abcdcba是回文字符串, abcdcbb不是
+    var str5 = 'abcdcba';
+    function strRverse(str) {
+        return str === str.split('').reverse().join('');
+    }
+    strRverse(str5);
+    //6、写一个函数，统计字符串里出现出现频率最多的字符
+    var str6 = 'today is sunday haha';
+    var dict = {};
+    var count = 0;
+    var maxValue;
+    function mostFreq(str) {
+        for(var i = 0; i < str.length; i++) {
+            var ch = str[i];
+            if(dict[ch] === undefined) {
+                dict[ch] = 1;
+            }else {
+                dict[ch] += 1;
+            }
+            if(dict[ch] > count) {
+                count = dict[ch];
+                maxValue = ch;
+            }
+        }
+        return{maxValue: maxValue, maxCount: count};
+    }
+    console.log(mostFreq(str6));
+
+    //7、写一个camelize函数，把my-short-string形式的字符串转化成myShortString形式的字符串，如
+    function camelize(str) {
+        var arr = str.split('-');
+        for(var i = 1; i < arr.length; i++){
+            arr[i] = arr[i][0].toUpperCase() + arr[i].substr(1);
+        }
+        return arr.join('');
+    }
+    console.log(camelize('list-style-image'));
+
+    //8、写一个 ucFirst函数，返回第一个字母为大写的字符 （***）
+    function ucFirst(str) {
+        return str[0].toUpperCase() + str.substr(1);
+    }
+    console.log(ucFirst('hunger'));
+
+    //9、写一个函数truncate(str, maxlength), 如果str的长度大于maxlength，会把str截断到maxlength长，并加上...，如
+    function truncate(str, maxlength) {
+        if(str.length > maxlength) {
+            return(str.substr(0, maxlength) + '...');
+        }else {
+            return(str);
+        }
+    }
+    console.log(truncate('hello jirengu', 6));
+
+    //11、如何把JSON 格式的字符串转换为 JS 对象？如何把 JS对象转换为 JSON 格式的字符串?
+    var obj = {
+        "name": "aibin",
+        "age": 21,
+        "hobby": {
+            "sports": "basketball",
+            "cate": "steak"
+        }
+    };
+
+    var json_str =  JSON.stringify(obj);
+    var json_obj = JSON.parse(json_str);
+    console.log(json_str);
+    console.log(json_obj);
+
+
+</script>
+</body>
+</html>

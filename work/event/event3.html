@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件任务3</title>
+</head>
+<style>
+    .img-preview img {
+        display: none;
+        width: 400px;
+        height: 300px;
+    }
+</style>
+<body>
+<ul class="ct">
+    <li data-img="1.png">鼠标放置查看图片1</li>
+    <li data-img="2.png">鼠标放置查看图片2</li>
+    <li data-img="3.png">鼠标放置查看图片3</li>
+</ul>
+<div class="img-preview">
+    <img class="china" src="../trip/img/china.png">
+    <img class="sydney" src="../trip/img/Sydney.png">
+    <img class="bali" src="../trip/img/bali.png">
+</div>
+<script>
+    //当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片
+    function $(id) {
+        return document.querySelector(id);
+    }
+    function $$(cls) {
+        return document.querySelectorAll(cls);
+    }
+
+    $('.ct>li:nth-child(1)').addEventListener('mouseenter', function () {
+        $('.img-preview .china').style.display = 'block';
+    });
+    $('.ct>li:nth-child(2)').addEventListener('mouseenter', function () {
+        $('.img-preview .sydney').style.display = 'block';
+    });
+    $('.ct>li:nth-child(3)').addEventListener('mouseenter', function () {
+        $('.img-preview .bali').style.display = 'block';
+    });
+    $$('.ct>li').forEach(function (node) {
+       node.addEventListener('mouseleave', function () {
+           $('.img-preview .china').style.display = 'none';
+           $('.img-preview .sydney').style.display = 'none';
+           $('.img-preview .bali').style.display = 'none';
+           //console.log(node);
+        });
+    });
+
+/*    $('.ct>li:nth-child(1)').addEventListener('mouseleave', function () {
+        $('.img-preview .china').style.display = 'none';
+    });
+    $('.ct>li:nth-child(2)').addEventListener('mouseleave', function () {
+        $('.img-preview .sydney').style.display = 'none';
+    });
+    $('.ct>li:nth-child(3)').addEventListener('mouseleave', function () {
+        $('.img-preview .bali').style.display = 'none';
+    });*/
+
+  /*  $('.ct>li:nth-child(1)').addEventListener('mouseenter', function () {
+        var imgNode = document.createElement('img');
+        imgNode.setAttribute('src', '../trip/img/china.png');
+        $('.img-preview').appendChild(imgNode);
+        $('.img-preview').style.display = 'block';
+    });
+    $('.ct>li:nth-child(1)').addEventListener('mouseleave', function () {
+        $('.img-preview').style.display = 'none';
+    });*/
+</script>
+</body>
+</html>

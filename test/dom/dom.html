@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+<div id="ct">
+    <a href="">my link</a>
+    <h1 class="title">my title</h1>
+    <p class="title">bin</p>
+</div>
+<div class="mod-tabs">
+    <ul>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+    </ul>
+    <button class="btn">点我</button>
+</div>
+<script>
+    var modLi = document.querySelectorAll('.mod-tabs li');
+    var modBtn = document.querySelector('.mod-tabs .btn');
+    //get
+    var ct = document.getElementById('ct');
+    console.log(ct.innerHTML);
+    console.log(ct.innerText);
+
+    var t = document.getElementsByClassName('title');
+    console.log(t);
+    var a = ct.getElementsByTagName('a');
+    console.log(a);
+
+    //query
+    var title = document.querySelector('#ct h1.title');
+    console.log(title);
+    var title2 = document.querySelector('#ct p.title');
+    console.log(title2);
+    var titleAll = document.querySelectorAll('#ct .title');
+    console.log(titleAll);
+
+    //creat
+    var node2 = document.createElement('img');
+    ct.appendChild(node2);
+    var newConent1 = document.createTextNode('Hello');
+    ct.appendChild(newConent1);
+
+    //fragment
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var tempCt = document.createDocumentFragment();
+    for (var i = 0; i < arr.length; i++) {
+        var node1 = document.createElement('div');
+        node1.innerText = arr[i];
+        tempCt.appendChild(node1);
+    }
+    ct.appendChild(tempCt);
+
+    //appendChild
+    var newDiv = document.createElement('div');
+    var newContent = document.createTextNode('Hello');
+    newDiv.appendChild(newContent);
+
+    //insertBefore
+    var newDiv2 = document.createElement('div');
+    var newContent2 = document.createTextNode('Hello');
+    newDiv2.insertBefore(newContent2, newDiv2.firstChild);
+
+    //test
+    document.querySelectorAll('#ct .title');
+    var contain = document.querySelector('#ct');
+    var node = document.createElement('img');
+        node.setAttribute('src', 'http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg');
+    contain.appendChild(node);
+    contain.removeChild(node);
+    node.getAttribute('src');
+    node.removeAttribute('src');
+
+    //contain.innerHTML = '<img src="http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg">';
+    //contain.innerText = 'hello';
+
+    //class
+    node.classList.add('active');
+    node.classList.remove('active');
+    node.classList.contains('active');
+</script>
+</body>
+</html>

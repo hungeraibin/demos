@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+</head>
+<body>
+<script>
+    //1、写一个函数，返回从min到max之间的 随机整数，包括min不包括max
+    function getRandInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    console.log(getRandInt(-8, 8));
+
+    //2、写一个函数，返回从min都max之间的 随机整数，包括min包括max
+     function getRandInt2(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    console.log(getRandInt2(-6, 6));
+
+     //3、写一个函数，生成一个长度为 n 的随机字符串，字符串字符的取值范围包括0到9，a到 z，A到Z。
+    function getRandStr(length) {
+        var dict = '0123456789' +
+            'abcdefghijklmnopqrstuvwxyz' +
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        var str = '';
+        for(var i = 0; i < length; i++) {
+            str += dict[getRandInt(0, 62)];
+        }
+        return str;
+    }
+    console.log(getRandStr(4));
+
+    //4、写一个函数，生成一个随机 IP 地址，一个合法的 IP 地址为 0.0.0.0~255.255.255.255
+    function getRandIP() {
+        var arr = [];
+        for(var i = 0; i < 4; i++) {
+            arr.push(getRandInt(0, 256));
+        }
+        return arr.join('.');
+    }
+    console.log(getRandIP());
+
+    //5、写一个函数，生成一个随机颜色字符串，合法的颜色为#000000~ #ffffff
+    function getRandColor() {
+        var dict = '0123456789abcdef';
+        var str = '#';
+        for(var i = 0; i < 6; i++) {
+            str += dict[getRandInt(0, 16)];
+        }
+        return str;
+    }
+    var color = getRandColor();
+    console.log(color);
+</script>
+</body>
+</html>

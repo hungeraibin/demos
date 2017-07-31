@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件任务2</title>
+</head>
+<body>
+
+<ul class="ct">
+    <li>这里是</li>
+    <li>饥人谷</li>
+    <li>任务班</li>
+</ul>
+<input class="ipt-add-content" placeholder="添加内容"/>
+<button id="btn-add-start">开头添加</button>
+<button id="btn-add-end">结尾添加</button>
+<script>
+    //当点击按钮开头添加时在<li>这里是</li>元素前添加一个新元素，内容为用户输入的非空字符串；当点击结尾添加时在最后一个 li 元素后添加用户输入的非空字符串.
+    //当点击每一个元素li时控制台展示该元素的文本内容。
+
+    function $(id) {
+        return document.querySelector(id);
+    }
+    $('#btn-add-start').addEventListener('click', function (e) {
+        e.preventDefault();
+        var liNode = document.createElement('li');
+        if ($('.ipt-add-content').value) {
+            liNode.innerText = $('.ipt-add-content').value;
+            $('.ct').insertBefore(liNode, $('.ct').firstChild);
+        }
+    });
+    $('#btn-add-end').addEventListener('click', function (e) {
+        e.preventDefault();
+        var liNode = document.createElement('li');
+        if ($('.ipt-add-content').value) {
+            liNode.innerText = $('.ipt-add-content').value;
+            $('.ct').appendChild(liNode);
+        }
+    });
+    $('.ct').addEventListener('click', function (e) {
+        console.log(e.target.innerText);
+    });
+</script>
+</body>
+</html>
