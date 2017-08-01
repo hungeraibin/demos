@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框</title>
+    <style>
+        .modal-dialog {
+            display: none;
+        }
+        .modal-cover{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .modal-container .header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding: 0 20px;
+        }
+
+        .modal-container a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 25px;
+            line-height: 60px;
+        }
+
+        .modal-container a:hover {
+            color: #a7a7a7;
+        }
+        .modal-container .content {
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .modal-container .footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px 20px;
+        }
+
+        .btn {
+            padding: 6px 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #027ed9;
+            cursor: pointer;
+        }
+
+        .footer .btn-close {
+            color: #333;
+            background-color: #fff;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #025AA5;
+        }
+
+        .footer .btn-close:hover {
+            background-color: #E6E6E6;
+        }
+
+        .open {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h2>创建模态框(Modal)</h2>
+<button class="btn btn-modal">开始演示模态框</button>
+<div class="modal-dialog">
+    <div class="modal-cover"></div>
+    <div class="modal-container">
+        <div class="header">
+            <h2>模态框（Modal)标题</h2>
+            <a href="#">×</a>
+        </div>
+        <div class="content">
+            <p>在这里添加一些文本...</p>
+            <p>点击关闭按钮检查事件功能...</p>
+        </div>
+        <div class="footer">
+            <button class="btn btn-close">关闭</button>
+            <button class="btn btn-submit">提交更改</button>
+        </div>
+    </div>
+</div>
+<script>
+    function $(id) {
+        return document.querySelector(id);
+    }
+    $('.btn-modal').addEventListener('click', function () {
+        $('.modal-dialog').classList.add('open');
+    });
+    $('.header a').addEventListener('click', function () {
+        $('.modal-dialog').classList.remove('open');
+    });
+    $('.footer .btn-close').addEventListener('click', function () {
+        $('.modal-dialog').classList.remove('open');
+    });
+    $('.footer .btn-submit').addEventListener('click', function () {
+        alert('提示：请确认信息...');
+    });
+
+    $('.modal-dialog').addEventListener('click', function () {
+        $('.modal-dialog').classList.remove('open');
+    });
+    $('.modal-dialog .modal-container').addEventListener('click', function (e) {
+        e.stopPropagation();
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab的实现</title>
+    <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header {
+            width: 400px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .header > li {
+            line-height: 40px;
+            border: 1px solid #ccc;
+            border-right: none;
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .header > li:last-child {
+            border-right: 1px solid #ccc;
+        }
+
+        .header > li.active {
+            background-color: #ccc;
+        }
+
+        .header > li:hover {
+            background-color: #ddd;
+            opacity: 0.8;
+        }
+
+        .content > li {
+            width: 358px;
+            height: 300px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-top: none;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .content > li.active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tab-container">
+    <ul class="header">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <ul class="content">
+        <li class="active">content1</li>
+        <li>content2</li>
+        <li>content3</li>
+    </ul>
+</div>
+
+<script>
+    function $$(cls) {
+        return document.querySelectorAll(cls);
+    }
+    $$('.header > li').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+           $$('.header > li').forEach(function (node) {
+               node.classList.remove('active');
+           });
+           this.classList.add('active');
+
+           var index = [].indexOf.call($$('.header > li'), this);
+           $$('.content > li').forEach(function (node) {
+               node.classList.remove('active');
+           });
+           $$('.content > li')[index].classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
