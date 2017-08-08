@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        h2 {
+            color: #666;
+        }
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .market-wrap .commodity {
+            width: 847px;
+            border: 1px solid #ddd;
+            box-shadow: 3px 5px 4px 0 rgba(0, 0, 0, 0.2);
+            display: none;
+
+        }
+
+        .market-wrap .commodity.active {
+            display: block;
+        }
+        .commodity .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.3);
+            opacity: 0;
+
+        }
+        .commodity li.hover .cover {
+            opacity: 1;
+        }
+        .cover a {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #C81623;
+            border-radius: 6px;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: #C81623;
+            font-size: 14px;
+            background-color: #f7f7f7;
+        }
+
+        .commodity li {
+            padding: 0 30px;
+            border: 1px solid #ccc;
+            float: left;
+            margin: 10px;
+            position: relative;
+        }
+
+        .commodity li p:last-child {
+            color: #C81623;
+        }
+
+        .btn-more {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #f7f7f7;
+            border: 1px solid #db26c5;
+            border-radius: 6px;
+            color: #db26c5;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="market-wrap">
+    <h2>电子数码</h2>
+    <ul class="commodity clearfix active">
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB121YlOVXXXXXhXXXXSutbFXXX.jpg_q90">
+            <p>Huawei/华为 Mate 9</p>
+            <p>￥2528</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1Dds1OVXXXXa4aXXXSutbFXXX.jpg">
+            <p>OION空气净化器</p>
+            <p>￥1088</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1sLWUOpXXXXakaXXXSutbFXXX.jpg_q90">
+            <p>华为荣耀8</p>
+            <p>￥1258</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1uVwcOFXXXXcsapXXSutbFXXX.jpg_q90">
+            <p>iPhone 7</p>
+            <p>￥3528</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1RxXCQpXXXXbKXXXXSutbFXXX.jpg">
+            <p>Beats solo3耳机</p>
+            <p>￥1458</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1JCcLOVXXXXXyapXXSutbFXXX.jpg">
+            <p>科沃斯扫地机器人</p>
+            <p>￥1299</p>
+        </li>
+    </ul>
+
+</div>
+<button class="btn-more">添加更多</button>
+<script>
+    var products = [{
+        img: "https://gw.alicdn.com/bao/uploaded/TB1u9dYOVXXXXaHaXXXSutbFXXX.jpg_q90",
+        name: 'Meizu/魅族',
+        price: '￥749'
+    },{
+        img: "https://gw.alicdn.com/bao/uploaded/TB1qxMFPFXXXXbKapXXSutbFXXX.jpg",
+        name: 'Haier/海尔烘干机',
+        price: '￥1249'
+    },{
+        img: "https://gw.alicdn.com/bao/uploaded/TB19wcoPXXXXXXqXpXXSutbFXXX.jpg",
+        name: 'Midea/美的电饭煲',
+        price: '￥179'
+    }];
+    function getHtml(product) {
+        var html ='';
+        html += '<li> <div class="cover"> <a href="#">立即抢购</a> </div>';
+        html += '<img src="' + product.img + '">' + '<p>'+ product.name +'</p>' + '<p>'+ product.price +'</p>' + '</li>';
+        return html;
+    }
+    $('.btn-more').on('click', function () {
+        products.forEach(function (e) {
+            var html = getHtml(e);
+            $('.market-wrap .commodity').append(html);
+        });
+    });
+    var $ulCommodity = $('.commodity');
+    $ulCommodity.on('mouseenter', 'li', function () {
+        $(this).addClass('hover');
+    });
+    $ulCommodity.on('mouseleave', 'li', function () {
+        $(this).removeClass('hover');
+    });
+</script>
+</body>
+</html>

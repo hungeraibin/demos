@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab切换</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .market-wrap {
+            margin-top: 20px;
+        }
+
+        .market-wrap .navbar {
+            display: flex;
+            width: 188px;
+            border: 1px solid #ccc;
+        }
+
+        .navbar > li {
+            color: #333;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .navbar > li.active {
+            background-color: #ccc;
+            color: #C81623;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .market-wrap .commodity {
+            width: 847px;
+            border: 1px solid #ddd;
+            box-shadow: 3px 5px 4px 0 rgba(0, 0, 0, 0.2);
+            display: none;
+
+        }
+
+        .market-wrap .commodity.active {
+            display: block;
+        }
+        .commodity .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.3);
+            opacity: 0;
+
+        }
+        .commodity li.hover .cover {
+            opacity: 1;
+        }
+        .cover a {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #C81623;
+            border-radius: 6px;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: #C81623;
+            font-size: 14px;
+            background-color: #f7f7f7;
+        }
+
+        .commodity li {
+            padding: 0 30px;
+            border: 1px solid #ccc;
+            float: left;
+            margin: 10px;
+            position: relative;
+        }
+
+        .commodity li p:last-child {
+            color: #C81623;
+        }
+
+    </style>
+</head>
+<body>
+<div class="market-wrap">
+    <ul class="navbar">
+        <li class="nav-list active">推荐</li>
+        <li class="nav-list">手机</li>
+        <li class="nav-list">智能家电</li>
+    </ul>
+
+
+    <ul class="commodity clearfix active">
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB121YlOVXXXXXhXXXXSutbFXXX.jpg_q90">
+            <p>Huawei/华为 Mate 9</p>
+            <p>￥2528</p>
+
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1Dds1OVXXXXa4aXXXSutbFXXX.jpg">
+            <p>OION空气净化器</p>
+            <p>￥1088</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1sLWUOpXXXXakaXXXSutbFXXX.jpg_q90">
+            <p>华为荣耀8</p>
+            <p>￥1258</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1uVwcOFXXXXcsapXXSutbFXXX.jpg_q90">
+            <p>iPhone 7</p>
+            <p>￥3528</p>
+        </li>
+
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1RxXCQpXXXXbKXXXXSutbFXXX.jpg">
+            <p>Beats solo3耳机</p>
+            <p>￥1458</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1JCcLOVXXXXXyapXXSutbFXXX.jpg">
+            <p>科沃斯扫地机器人</p>
+            <p>￥1299</p>
+        </li>
+    </ul>
+    <ul class="commodity clearfix">
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB121YlOVXXXXXhXXXXSutbFXXX.jpg_q90">
+            <p>Huawei/华为 Mate 9</p>
+            <p>￥2528</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1u9dYOVXXXXaHaXXXSutbFXXX.jpg_q90">
+            <p>Meizu/魅族</p>
+            <p>￥749</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1sLWUOpXXXXakaXXXSutbFXXX.jpg_q90">
+            <p>华为荣耀8</p>
+            <p>￥1258</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1uVwcOFXXXXcsapXXSutbFXXX.jpg_q90">
+            <p>iPhone 7</p>
+            <p>￥3528</p>
+        </li>
+
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB15K1oOpXXXXbaapXXSutbFXXX.jpg_q90">
+            <p>美图M6</p>
+            <p>￥1899</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1kXbCOpXXXXbsapXXSutbFXXX.jpg_q90">
+            <p>三星</p>
+            <p>￥888</p>
+        </li>
+    </ul>
+    <ul class="commodity clearfix">
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1qxMFPFXXXXbKapXXSutbFXXX.jpg">
+            <p>Haier/海尔烘干机</p>
+            <p>￥1249</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1Dds1OVXXXXa4aXXXSutbFXXX.jpg">
+            <p>OION空气净化器</p>
+            <p>￥1088</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB19wcoPXXXXXXqXpXXSutbFXXX.jpg">
+            <p>Midea/美的电饭煲</p>
+            <p>￥179</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1Px5oQFXXXXX0XFXXSutbFXXX.jpg">
+            <p>水田电风扇</p>
+            <p>￥288</p>
+        </li>
+
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1RxXCQpXXXXbKXXXXSutbFXXX.jpg">
+            <p>Beats solo3耳机</p>
+            <p>￥1458</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1JCcLOVXXXXXyapXXSutbFXXX.jpg">
+            <p>科沃斯扫地机器人</p>
+            <p>￥1299</p>
+        </li>
+    </ul>
+</div>
+
+<div class="market-wrap">
+    <ul class="navbar">
+        <li class="nav-list">推荐</li>
+        <li class="nav-list active">手机</li>
+        <li class="nav-list">智能家电</li>
+    </ul>
+    <ul class="commodity clearfix">
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB121YlOVXXXXXhXXXXSutbFXXX.jpg_q90">
+            <p>Huawei/华为 Mate 9</p>
+            <p>￥2528</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1Dds1OVXXXXa4aXXXSutbFXXX.jpg">
+            <p>OION空气净化器</p>
+            <p>￥1088</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1sLWUOpXXXXakaXXXSutbFXXX.jpg_q90">
+            <p>华为荣耀8</p>
+            <p>￥1258</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1uVwcOFXXXXcsapXXSutbFXXX.jpg_q90">
+            <p>iPhone 7</p>
+            <p>￥3528</p>
+        </li>
+
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1RxXCQpXXXXbKXXXXSutbFXXX.jpg">
+            <p>Beats solo3耳机</p>
+            <p>￥1458</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1JCcLOVXXXXXyapXXSutbFXXX.jpg">
+            <p>科沃斯扫地机器人</p>
+            <p>￥1299</p>
+        </li>
+    </ul>
+    <ul class="commodity clearfix active">
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB121YlOVXXXXXhXXXXSutbFXXX.jpg_q90">
+            <p>Huawei/华为 Mate 9</p>
+            <p>￥2528</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1u9dYOVXXXXaHaXXXSutbFXXX.jpg_q90">
+            <p>Meizu/魅族</p>
+            <p>￥749</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1sLWUOpXXXXakaXXXSutbFXXX.jpg_q90">
+            <p>华为荣耀8</p>
+            <p>￥1258</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1uVwcOFXXXXcsapXXSutbFXXX.jpg_q90">
+            <p>iPhone 7</p>
+            <p>￥3528</p>
+        </li>
+
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB15K1oOpXXXXbaapXXSutbFXXX.jpg_q90">
+            <p>美图M6</p>
+            <p>￥1899</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1kXbCOpXXXXbsapXXSutbFXXX.jpg_q90">
+            <p>三星</p>
+            <p>￥888</p>
+        </li>
+    </ul>
+    <ul class="commodity clearfix">
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1qxMFPFXXXXbKapXXSutbFXXX.jpg">
+            <p>Haier/海尔烘干机</p>
+            <p>￥1249</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1Dds1OVXXXXa4aXXXSutbFXXX.jpg">
+            <p>OION空气净化器</p>
+            <p>￥1088</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB19wcoPXXXXXXqXpXXSutbFXXX.jpg">
+            <p>Midea/美的电饭煲</p>
+            <p>￥179</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1Px5oQFXXXXX0XFXXSutbFXXX.jpg">
+            <p>水田电风扇</p>
+            <p>￥288</p>
+        </li>
+
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1RxXCQpXXXXbKXXXXSutbFXXX.jpg">
+            <p>Beats solo3耳机</p>
+            <p>￥1458</p>
+        </li>
+        <li>
+            <div class="cover">
+                <a href="#">立即抢购</a>
+            </div>
+            <img src="https://gw.alicdn.com/bao/uploaded/TB1JCcLOVXXXXXyapXXSutbFXXX.jpg">
+            <p>科沃斯扫地机器人</p>
+            <p>￥1299</p>
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    var $liNav = $('.navbar > li');
+    var $liContent = $('.commodity > li');
+    $liNav.on('click', function () {
+        var $this = $(this);
+        var index = $this.index();
+        $this.addClass('active').siblings().removeClass('active');
+        $this.parents('.market-wrap').find('.commodity').eq(index).addClass('active').siblings().removeClass('active');
+    });
+    $liContent.on('mouseenter', function () {
+        $(this).addClass('hover');
+    });
+    $liContent.on('mouseleave', function () {
+        $(this).removeClass('hover');
+    });
+</script>
+</body>
+</html>

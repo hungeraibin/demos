@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tab的实现</title>
+    <title>tab的实现jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         ul,
         li {
@@ -10,7 +11,9 @@
             padding: 0;
             list-style: none;
         }
-
+        .tab-container {
+            margin-top: 30px;
+        }
         .header {
             width: 400px;
             margin: 0 auto;
@@ -30,18 +33,18 @@
             border-right: 1px solid #ccc;
         }
 
-        .header > li.active {
+        .header .active {
             background-color: #ccc;
         }
 
         .header > li:hover {
-            background-color: #eee;
+            background-color: #ddd;
             opacity: 0.8;
         }
 
         .content > li {
             width: 358px;
-            height: 300px;
+            height: 150px;
             padding: 10px 20px;
             margin: 0 auto;
             border: 1px solid #ccc;
@@ -50,7 +53,7 @@
             display: none;
         }
 
-        .content > li.active {
+        .content .active {
             display: block;
         }
 
@@ -69,24 +72,40 @@
         <li>content3</li>
     </ul>
 </div>
+<div class="tab-container">
+    <ul class="header">
+        <li class="panel active">tab1</li>
+        <li class="panel">tab2</li>
+        <li class="panel">tab3</li>
+    </ul>
+    <ul class="content">
+        <li class="active">content1</li>
+        <li>content2</li>
+        <li>content3</li>
+    </ul>
+</div>
+<div class="tab-container">
+    <ul class="header">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <ul class="content">
+        <li class="active">content1</li>
+        <li>content2</li>
+        <li>content3</li>
+    </ul>
+</div>
 
 <script>
-    function $$(cls) {
-        return document.querySelectorAll(cls);
-    }
-    $$('.header > li').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-           $$('.header > li').forEach(function (node) {
-               node.classList.remove('active');
-           });
-           this.classList.add('active');
-
-           var index = [].indexOf.call($$('.header > li'), this);
-           $$('.content > li').forEach(function (node) {
-               node.classList.remove('active');
-           });
-           $$('.content > li')[index].classList.add('active');
-        });
+    $('.header li').on('click', function () {
+        var $this = $(this);
+        var index = $this.index();
+        $this.addClass('active').siblings().removeClass('active');
+//        $('.content li').eq(index).addClass('active').siblings().removeClass('active');
+        $this.parents('.tab-container')
+            .find('.content li').eq(index)
+            .addClass('active').siblings().removeClass('active');
     });
 </script>
 </body>

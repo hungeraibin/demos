@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装</title>
+</head>
+<body>
+<script>
+    var Car = (function() {
+        var speed = 0;
+        function setSpeed(s){
+            speed = s;
+        }
+        function getSpeed() {
+            console.log(speed);
+        }
+        function accelerate() {
+            speed += 10;
+        }
+        function decelerate() {
+            speed -= 10;
+            if (speed <= 0) {
+                speed = 0;
+            }
+        }
+        function getStatus() {
+            if (speed === 0) {
+                console.log('stop');
+            } else {
+                console.log('running');
+            }
+        }
+        return {
+            setSpeed: setSpeed,
+            getSpeed: getSpeed,
+            accelerate: accelerate,
+            decelerate: decelerate,
+            getStatus: getStatus
+        }
+    })();
+    Car.setSpeed(30);
+    Car.getSpeed(); //30
+    Car.accelerate();
+    Car.getSpeed(); //40;
+    Car.decelerate();
+    Car.decelerate();
+    Car.getSpeed(); //20
+    Car.getStatus(); // 'running';
+    Car.decelerate();
+    Car.decelerate();
+    Car.getStatus();  //'stop';
+</script>
+</body>
+</html>

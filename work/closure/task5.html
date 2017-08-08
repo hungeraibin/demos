@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取宽高</title>
+</head>
+<body>
+<div id="test" style="height:2px; width: 10px" >123</div>
+
+<script>
+    /*var div = document.getElementById('test');
+    console.log(div.style.height);
+    console.log(div.style);*/
+
+    function $(id) {
+        return document.querySelector(id);
+    }
+    function trueStyle(element,pseduoElement) {
+        //IE不支持window.getComputedStyle()，支持element.currentStyle();
+        return element.currentStyle ? element.currentStyle : window.getComputedStyle(element,pseduoElement);
+    }
+    var trueWidth = trueStyle($('#test')).width;
+    var trueHeight = trueStyle($('#test')).height;
+    console.log(trueWidth, trueHeight);
+
+    var param = encodeURIComponent('https://www.aibin.com/hunger/');
+    console.log(param); //https%3A%2F%2Fwww.aibin.com%2Fhunger%2F
+    var url = decodeURIComponent(param);
+    console.log(url);
+</script>
+</body>
+</html>

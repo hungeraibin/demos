@@ -1,0 +1,208 @@
+# 生命周期
+```
+var a = 1;
+window.a //关闭窗口时消失
+```
+```
+function f1() {
+    var a = {name: 'a'};//也就是在这里一行，a有值
+    window.xxx = a;//特例
+    return undefined;
+}
+//浏览器执行到这一行
+f1(); //这一行之后，a就诞生了
+//f1()执行完之后，a就死了
+
+f1();//新的a
+//a die
+
+console.log(window.xxx);
+```
+# 作用域
+```
+var a
+
+function f1() {
+    var a;
+
+    function f2() {
+        var a;
+        f3();
+        a = 1; //直觉
+    }
+}
+
+function f3() {
+    a = 2; //第一个a 磁力向上看
+}
+```
+```
+    !function (a) {
+        //var a = arguments[0];
+        a = 1;
+        console.log(a);
+    }(/*没有传参*/); //立即函数，取消全局变量。 用()很愚蠢，可以当函数报错
+
+    function f1() {
+        var a;
+        a  = 2;
+        console.log(a);
+    }
+    f2();
+
+```
+1. 要想得到独立的作用域必须声明一个函数
+2. 想运行这个代码，必须执行声明函数
+
+# 变量提升
+```
+var a = 100;
+function a() {}
+console.log(a);
+```
+```
+var a
+function a() {}
+
+a = 100;
+console.log(a);
+```
+```
+var a = 100;//1
+f1()
+function f1() {
+    var b = 2;
+    if(b === 1) {
+        var a;//2
+    }
+    a = 99;
+}
+```
+```
+var a
+function f1() {
+    var b
+    var a
+    b = 2;
+    if(b === 1) {
+        var a;//2
+    }
+    a = 99;
+}
+a = 100;//1
+f1()
+
+```
+
+# 异步 Task
+```
+buuton.onclick = function f() {
+    console.log('A');
+}
+console.log('B');
+```
+当用户点击按钮时
+浏览器会执行函数 f
+button.onclick(event)
+button.onclick.call(target, event)
+
+# 面试题
+```
+    var items = document.querySelectorAll('li');
+    for (var i = 0; i < items.length; i++) {
+        items[i].onclick = function () {
+            console.log(i);
+        }
+    }
+```
+```
+    var items
+    var i
+    items = document.querySelectorAll('li');
+    for (i = 0; i < items.length; i++) {
+        // i == 0，1，2，3，4，5
+        items[i].onclick = function () {
+            console.log(i); //C
+        }
+    }
+    // i == 6
+    console.log(i) //D
+    //C落后于D
+```
+声明新的变量,函数新的作用域
+```
+    var items
+    var i
+    items = document.querySelectorAll('li');
+    for (i = 0; i < items.length; i++) {
+        // i == 0，1，2，3，4，5
+
+         !function(j) {
+             items[j].onclick = function () {
+             console.log(j);
+             }
+         }(i);
+    }
+
+```
+```
+    var items
+    var i
+    items = document.querySelectorAll('li');
+    for (i = 0; i < items.length; i++) {
+        // i == 0，1，2，3，4，5
+
+        items[i].onclick = function (i) {
+            return function() {
+                console.log(i);
+            }
+        }(i)
+
+    }
+```
+下一道
+```
+var arr = [];
+for(var i = 0; i < 6; i++) {
+    arr[i] = function() {
+        console.log(i);
+    }
+}
+```
+```
+var arr = [];
+var i
+for(i = 0; i < 6; i++) {
+    arr[i] = function() {
+        console.log(i);
+    }
+}
+
+//arr[3]()
+var fn = arr[3];
+fn() //去执行console.log(i)
+
+```
+
+# 闭包
+1. 当执行一个函数，就会初始化一个活动对象
+2. 当在 执行上下文A创建函数fn，fn的作用域链就指向A的活动对象
+```
+var fn = function() {
+
+    var a = {
+        name: 'a'
+    }
+
+    var b = {
+        name: 'b'
+    }
+    return function() {
+        return a
+    }
+}()
+//a 死了
+    console.log(fn());
+    //谁也不能访问b了 内存泄漏
+```
+立即执行函数用来搞死闭包的

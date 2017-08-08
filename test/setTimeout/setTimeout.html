@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步</title>
+</head>
+<body>
+<script>
+    function f(a, b) {
+        console.log(new Date());
+        console.log(arguments);
+    }
+ //   setTimeout(f, 3000, 3, 1, 2, 1);
+    //setInterval(f, 1000);
+    var timerId = setTimeout('console.log(8)', 1000);
+    window.clearTimeout(timerId);
+
+    //异步
+    function 排队取号(黄牛) {
+        setTimeout(function f2() {
+            黄牛('你的号码是 233')
+        }, 3000);
+    }
+    //上面和下面分开看
+    var 我的号 = undefined;
+    function 黄牛(result) {
+        我的号 = result;
+    }
+
+    排队取号(黄牛);
+
+    for (var i = 0; i < 5; i++) {
+        setTimeout((function (i) {
+            console.log(i)
+        })(i), i*1000);
+    }
+    //一行拆成多行
+    for (var i = 0; i < 5; i++) {
+        var t1 = function (i) {
+            console.log(i);
+        }
+        var t2 = t1(i);
+        var t3 = i * 1000;
+        setTimeout(t2, t3);
+    }
+</script>
+</body>
+</html>

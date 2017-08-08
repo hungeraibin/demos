@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab左右切换</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+
+        body {
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #FF0036;
+            padding-left: 20px;
+        }
+        img {
+            width: 1000px;
+            height: 500px;
+            cursor: pointer;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #FF0036;
+        }
+
+        .navbar > li {
+            color: #f7f7f7;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .navbar > li.active {
+            background-color: #ff1b78;
+        }
+
+        .wrap {
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .content {
+            display: flex;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+<h1>TMALL</h1>
+    <ul class="navbar">
+        <li>天猫超市</li>
+        <li>天猫国际</li>
+        <li>天猫会员</li>
+    </ul>
+<div class="wrap">
+    <ul class="content">
+        <li>
+            <img src="https://img.alicdn.com/imgextra/i4/1910146537/TB2AGPEXm69F1JjSZPiXXXfCXXa_!!1910146537.jpg_Q90.jpg">
+        </li>
+        <li>
+            <img src="https://img.alicdn.com/tfs/TB1McrNSFXXXXX8XXXXXXXXXXXX-750-420.jpg_960x960Q50s50.jpg">
+        </li>
+        <li>
+            <img src="https://img.alicdn.com/simba/img/TB1_VPpSXXXXXXkaFXXSutbFXXX.jpg">
+        </li>
+    </ul>
+</div>
+
+</body>
+<script>
+    var $navLi = $('.navbar > li');
+    $navLi.on('mouseenter', function () {
+        $(this).addClass('active');
+    });
+    $navLi.on('mouseleave', function () {
+        $(this).removeClass('active');
+    });
+    $navLi.on('click', function () {
+        var index = $(this).index();
+        $('.content').animate({left: -1000*index});
+    });
+</script>
+</html>

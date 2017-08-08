@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery动画</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            border: 1px solid #ccc;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ccc;
+            background-color: #027ed9;
+        }
+
+        .box3 {
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<button id="btn-box1">show</button>
+<button id="btn-box2">hide</button>
+<div class="box3"></div>
+<button id="btn-box3">动画</button>
+<button id="btn-finish">完成</button>
+<button id="btn-stop">停止</button>
+<div class="ct">
+    <ul>
+        <li>
+            <h3>标题1</h3>
+            <p>内容1</p>
+        </li>
+        <li>
+            <h3>标题2</h3>
+            <p>内容2</p>
+        </li>
+        <li>
+            <h3>标题3</h3>
+            <p>内容3</p>
+        </li>
+        <li>
+            <h3>标题4</h3>
+            <p>内容4</p>
+        </li>
+    </ul>
+</div>
+<script>
+    $('#btn-box1').on('click', function () {
+//        $('.box').show(5000, 'linear');
+//        $('.box').toggle(5000, 'linear');
+//        $('.box').fadeIn(2000, 'linear');
+        $('.box').slideDown('slow');
+    });
+    $('#btn-box2').on('click', function () {
+//        $('.box').hide(5000, 'swing');
+//        $('.box').fadeOut(3000, 'linear');
+        $('.box').slideUp('fast');
+    });
+
+    var $box =  $('.box3');
+//    $('#btn-box3').on('click', function () {
+//        $box.animate({width: '200px'}, 2000)
+//        .animate({left: '30px',}, 1000);
+//    }); //链式调用
+
+    var action = [
+        {width: '200px', height: '200px'},
+        {left: '200px'},
+        {top: '200px'},
+        {left: '0'},
+        {top: '0'},
+        {width: '80px', height: '80px'}
+    ];
+    $('#btn-box3').on('click', function () {
+        action.forEach(function (action) {
+            $box.animate(action);
+        });
+    });
+    $('#btn-stop').click(function () {
+        $box.stop(true, false);
+    });
+    $('#btn-finish').click(function () {
+        $box.finish();
+    });
+
+    $('.ct li').on('click', function () {
+        $(this).find('p').slideToggle(500);
+        $(this).siblings().find('p').slideUp();
+    });
+
+</script>
+</body>
+</html>

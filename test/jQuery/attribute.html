@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery属性</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .active {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input id="ipt1" type="text", value="hello" sex="男">
+<div class="box"></div>
+<button id="btn">变色</button>
+<script>
+    console.log($('#ipt1').val());
+    $('#ipt1').attr('type', 'checkbox');
+    console.log($('#ipt1').attr('sex'));
+
+    var $box = $('.box');
+    $box.css({
+        'height': '100px',
+        'width': '100px',
+        'border': '1px solid red'
+    });
+
+    $btn = $('#btn');
+    $btn.on('click', function () {
+        $box.toggleClass('active');
+    });
+
+    $node = $('div');
+    //jQuery常见
+    $node.append();
+    $node.prepend();
+    $node.remove();
+    $node.before();
+    $node.after();
+    $node.html();
+    $node.text();
+    $node.empty();
+
+    $('#ipt').val();
+    $box.attr('id');
+    $box.css();
+    $box.addClass();
+    $box.removeClass();
+    $box.hasClass();
+    $box.toggleClass();
+
+</script>
+</body>
+</html>

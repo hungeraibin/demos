@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    //下面的代码输出多少？修改代码让 fnArr[i]() 输出 i。使用 两种以上的方法
+    /*var fnArr = [];
+    for (var i = 0; i < 10; i ++) {
+        function temp(j) {
+            fnArr[j] =  function(){
+                return j;
+            }
+        }
+        temp(i);
+    }
+    console.log( fnArr[3]() );     */
+
+/*    var fnArr = [];
+    for (var i = 0; i < 10; i ++) {
+        !function (j) {
+            fnArr[j] =  function(){
+                return j;
+            }
+        }(i)
+    }
+    console.log( fnArr[3]() );*/
+
+    var fnArr = [];
+    for (var i = 0; i < 10; i ++) {
+        function temp(j) {
+            return function () {
+                return j;
+            }
+        }
+        var fn = temp(i);
+        fnArr[i] = fn;
+    }
+    console.log( fnArr[3]() );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax封装</title>
+</head>
+<body>
+<script>
+    ajax({
+        url: '/postArticle',
+        type: 'gost',
+        dataType: 'text',
+        data: {
+            article: article
+        },
+        success: function () {
+            $('#container').innerText = xhr.responseText;
+        },
+        error: function () {
+            console.log('error');
+        }
+    });
+
+    function ajax(opts) {
+        opts.success = opts.success  || function () {};
+        opts.error = opts.error || function () {};
+        opts.type = opts.type || 'get';
+        opts.dataType = opts.dataType || 'json';
+        opts.data = opts.data || {};
+        var dataStr = '';
+        for (var key in opts.data) {
+            dataStr += key + '=' + opts.data[key] + '&';
+        }
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200 || xmlhttp.status == 304) {
+                    if (opts.dataType === 'text') {
+                        opts.success(xmlhttp.responseText);
+                    }
+                    if (opts.dataType === 'json') {
+                        opts.success(JSON.parse(xmlhttp.responseText));
+                    }
+                } else {
+                    opts.error();
+                }
+            }
+        };
+
+        dataStr = dataStr.substr(0, dataStr.length - 1);
+
+        if (opts.type.toLowerCase() === 'post') {
+            xmlhttp.open(opts.type, opts.url, true);
+            xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xmlhttp.send(dataStr);
+        }
+        if (opts.type.toLowerCase() === 'get') {
+            xmlhttp.open(opts.type, opts.url + '?' + dataStr, true);
+            xmlhttp.send();
+        }
+    }
+</script>
+</body>
+</html>

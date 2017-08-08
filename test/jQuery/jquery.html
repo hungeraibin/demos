@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的使用</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <ul class="wrap">
+        <li>1</li>
+        <li class="active">2</li>
+        <li>3</li>
+    </ul>
+</div>
+<script>
+
+    //选择器
+    //$('#container li')[0].innerText = '123';
+   // $(document.querySelector('.active')).text('456');
+    $('.wrap').find('.active').siblings();
+    $('.wrap').parents('div');
+    $('.wrap').children('.active');
+
+    //DOM操作
+    var $li = $('<li>4</li>');
+    $('#container .wrap').append($li);
+    var $li2 = $('<li>0</li>');
+    $('#container .wrap').prepend($li2);
+    $li.before($li2);
+    $('.wrap li').eq('3').remove();
+    $('.wrap').empty();
+
+    //事件
+
+</script>
+</body>
+</html>

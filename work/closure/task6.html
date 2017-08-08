@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isAndroid() {
+        return /android/i.test(navigator.userAgent);
+    }
+    function isIphone() {
+        return /iphone/i.test(navigator.userAgent);
+    }
+    function isIpad() {
+        return /ipad/i.test(navigator.userAgent);
+    }
+    function isIOS() {
+        return/iphone | ipad/i.test(navigator.userAgent);
+    }
+</script>
+</body>
+</html>

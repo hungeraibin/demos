@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab的滑动实现jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tab-container {
+            margin-top: 30px;
+        }
+        .header {
+            width: 400px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .header > li {
+            line-height: 40px;
+            border: 1px solid #ccc;
+            border-right: none;
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .header > li:last-child {
+            border-right: 1px solid #ccc;
+        }
+
+        .header .active {
+            background-color: #ccc;
+        }
+
+        .header > li:hover {
+            background-color: #ddd;
+            opacity: 0.8;
+        }
+
+        .wrapper {
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .wrapper .content {
+            position: absolute;
+            width: 100%;
+        }
+
+        .content > li {
+            width: 358px;
+            height: 150px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-top: none;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .content > li:nth-child(1) {
+            background-color: #027ed9;
+        }
+
+        .content > li:nth-child(2) {
+            background-color: violet;
+        }
+
+        .content > li:nth-child(3) {
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+<div class="tab-container">
+    <ul class="header">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <div class="wrapper">
+        <ul class="content">
+            <li>content1</li>
+            <li>content2</li>
+            <li>content3</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $('.header li').on('click', function () {
+        var $this = $(this);
+        var index = $this.index();
+        //var panelHeight = $('.wrapper').height();
+        $this.addClass('active').siblings().removeClass('active');
+        $this.parents('.tab-container')
+            .find('.wrapper .content')
+            .animate({top: -175*index});
+    });
+</script>
+</body>
+</html>

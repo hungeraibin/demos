@@ -1,0 +1,42 @@
+# BOM
+Browser Object Model
+
+1. window.history
+back
+forword
+
+2. window.location
+href
+protocal
+hostname
+port
+host
+pathname
+search
+hash
+
+3. window.name
+4. window.navigator
+5. window.screen
+6. window.self 
+7. window.top
+8. window.opener.location.reload
+# 打开新窗口
+```$xslt
+button.onclick = function() {
+    window.open('http://baidu.com', '_self');
+    
+}
+
+```
+window.open(url, windowName, windowFeatures);
+在页面正中央打开一个指定宽高的winddow
+
+# 修改查询参数
+```$xslt
+http://xxx.com/index.html?a=1
+$.bom.search('a')//1
+
+$.bom.search('a', 'xxx')//xxx
+http://xxx.com/index.html?a=xxx
+```

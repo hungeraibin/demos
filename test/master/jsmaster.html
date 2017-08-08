@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>像大师一样写JS</title>
+</head>
+<style>
+    .dialog {
+        position: fixed;
+        background-color: #fff;
+        border-radius: 4px;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2);
+        min-width: 16em;
+    }
+
+    .dialog > header {
+        padding: .5em;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .dialog > main {
+        padding: 1em .5em;
+    }
+
+    .dialog > footer {
+        border-top: 1px solid #ddd;
+        text-align: right;
+        padding: .3em .5em;
+    }
+</style>
+<body>
+我是页面
+<button id="xxx">打开对话框</button>
+<script>
+    function Dialog(options) {
+        this.options = options;
+        this._prepareHTML();
+        this._bindEvents();
+        this._mount();
+    }
+    Dialog.prototype._bindEvents = function () {
+        let div = this.div;
+        let buttonCallbacks = this.options.buttonCallbacks;
+        let dialog = this;
+        div.addEventListener('click', function (e) {
+            if (e.target.tagName === 'BUTTON') {
+                let index = parseInt(e.target.getAttribute('data-index'), 10);
+                if (buttonCallbacks[index].call() != false) {
+                    dialog.close(div);
+                }
+            }
+        });
+    }
+    Dialog.prototype._prepareHTML = function () {
+        let {title, content, buttons} = this.options;
+        let div = this.div = document.createElement('div');
+        div.className = 'dialog';
+        let buttonString = buttons.map(function (text, index) {
+            return `<button data-index = '${index}'>${text}</button>`;
+        }).join('\n');
+        let html = `
+                    <header>
+                        ${title}
+                    </header>
+                    <main>
+                        ${content}
+                    </main>
+                    <footer>
+                        ${buttonString}
+                    </footer>
+                    `;
+        console.log(html);
+        div.innerHTML = html;
+    }
+    Dialog.prototype.close = function () {
+        this.div.parentNode.removeChild(this.div);
+    }
+    Dialog.prototype._mount = function () {
+        document.body.appendChild(this.div);
+    }
+
+    /*使用者*/
+    /*1. 面向对象方案*/
+
+    //API
+    //close - 调用 close 可以关闭 dialog
+    xxx.onclick = function () {
+        let dialog = new Dialog({
+            title: '标题',
+            content: '你确定要删除吗',
+            buttons: ['确定', '取消'],
+            buttonCallbacks: [function () {
+                console.log('确定一定以及肯定');
+                return false;
+            }, function () {
+                console.log('返回拜拜');
+            }]
+        });
+        setTimeout(function () {
+            dialog.close();
+        }, 3000);
+    }
+
+</script>
+</body>
+</html>

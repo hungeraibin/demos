@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器对象模型</title>
+</head>
+<body>
+<button id="button1">set a</button>
+
+<script>
+    button1.onclick = function() {
+        //打开
+       // var f = 'width=960px, height=600px, location=no';
+      //  window.open('inframe.html', '_blank', f);
+
+        //中央弹出
+        //$.bom.openAtCenter(800, 600, 'inframe.html');
+
+        //查询
+       /* console.log($.bom.search('a'));
+        console.log($.bom.search('b'));
+        console.log($.bom.search('c'));*/
+        console.log($.bom.search('a', 'frank'));
+
+    }
+
+    //中央
+    window.$ = function () {
+        var array = [];
+        //省略
+        return array;
+    }
+
+    $.bom = {
+        openAtCenter: function (width, height, url) {
+            window.open(url, '_blank', `width=${width}px, height=${height}px,
+            screenX=${screen.width/2-width/2}px,
+            screenY=${screen.height/2-height/2}px`);
+        },
+
+        search: function (name, value) {
+            var searchAll = function () {
+                var result = {};
+                var search = window.location.search;
+                //去掉问号
+                if (search[0] === '?') {
+                    search = search.slice(1);
+                }
+                //&分组
+                var searchArray = search.split('&');
+                for (var i = 0; i < searchArray.length; i++) {
+                    var parts = searchArray[i].split('=');
+                    //console.log(parts);
+                    result[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1] || '');
+                }
+                return result;
+            }
+            var result = searchAll();
+            if (value === undefined) {
+                return result[name];   //用 & 分离
+            } else {
+                if (result[name] === undefined) {
+                    location.search += `&${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
+                } else {
+                    result[name] = encodeURIComponent(value);
+                    var newSearch = '?';
+                    for (var key in result) {
+                        newSearch += `${encodeURIComponent(key)}=${encodeURIComponent(result[key])}&`
+                    }
+                    location.search = newSearch;
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
