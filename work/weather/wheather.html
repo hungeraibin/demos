@@ -107,7 +107,38 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-    var addressUrl = 'https://weixin.jirengu.com/weather/now?cityid=WWGQDCW6TBW1';
+    var ipUrl = 'https://weixin.jirengu.com/weather/ip' ;
+    $.get(ipUrl).done(function (ret) {
+        console.log(ret.data);
+        var idUrl = 'https://weixin.jirengu.com/weather/cityid?location=' + ret.data;
+        console.log(idUrl)
+        $.get(idUrl).done(function (ret) {
+            var id = ret.results[0].id
+            //console.log(id);
+            var addressUrl = 'https://weixin.jirengu.com/weather/now?cityid=' + id;
+            $.get(addressUrl).done(function (ret) {
+                if (ret.status == 'OK') {
+                    var weatherObj = ret.weather[0];
+                    //console.log(weatherObj);
+                    appendHtmls(weatherObj);
+                    getTime();
+                    appendmore(weatherObj);
+                }
+            });
+
+        });
+    });
+    //cityIp = cityIp.toString();
+    //console.log(typeof(cityIp));
+    //console.log(cityIp)
+
+    /*var idUrl = `https://weixin.jirengu.com/weather/cityid?location=`;
+    console.log(idUrl)
+    $.get(idUrl).done(function (ret) {
+        console.log(ret);
+    });*/
+
+    /*var addressUrl = 'https://weixin.jirengu.com/weather/now?cityid=WWGQDCW6TBW1';
     $.get(addressUrl).done(function (ret) {
         if (ret.status == 'OK') {
             var weatherObj = ret.weather[0];
@@ -117,12 +148,15 @@
             appendmore(weatherObj);
 
         }
-    });
+    });*/
 
     function getTime() {
         var curDate = new Date();
         var curHours =curDate.getHours();
         var curMinutes = curDate.getMinutes();
+        if (curMinutes < 10) {
+            curMinutes = '0' + curMinutes;
+        }
         $('.time').append('<p>' + curHours + ':' + curMinutes + '</p>');
     }
 
@@ -142,7 +176,6 @@
         var futureArr = weather.future;
         var htmls = '';
         $.each(futureArr, function (i) {
-            console.log(i)
             if (i <= 4) {
                 var codeImg = `//weixin.jirengu.com/images/weather/code/${this.code1}.png`;
                 htmls += '<li><p>' + this.day + '</p>';
@@ -154,37 +187,6 @@
         $('.weather-show').append(htmls);
 
     }
-
-
-
-
-
-
-
-        /*$('#btn').on('click', function () {
-            var url = 'https://weixin.jirengu.com/weather/cityid?location=60.24.20.255';
-            $.get(url).done(function (ret) {
-                console.log(ret);
-            });
-        });
-
-        $('#btn2').on('click', function () {
-            var url = 'https://weixin.jirengu.com/weather/now?cityid=WWGQDCW6TBW1';
-            $.get(url).done(function (ret) {
-                //console.log(ret.weather[0]);
-                appenhtml(ret.weather[0]);
-            });
-        });
-
-        function appenhtml(weather) {
-            //var suggestionImg = `https://weixin.jirengu.com/images/weather/suggestion/${weather.today.suggestion.dressing}.png`;
-            //var codeImg = `https://weixin.jirengu.com/images/weather/code/5.png`;
-            var $b = $(weather.now);
-            console.log($b);
-            var b = weather.now;
-            console.log(b);
-            //$('img').attr('src', suggestionImg);
-        }*/
 
     </script>
 </body>
