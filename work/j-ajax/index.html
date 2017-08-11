@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax加载更多</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #ct li {
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            background-color: #eeeeee;
+            box-shadow: 5px 0 6px 0 rgba(0,0,0,0.2);
+        }
+
+        #ct li:hover {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        #load-more {
+            display: block;
+            text-decoration: none;
+            width: 100px;
+            text-align: center;
+            margin: 10px auto;
+            padding: 16px 6px;
+            border-radius: 6px;
+            border: 1px solid pink;
+            color: hotpink;
+        }
+
+        #load-more:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<ul id="ct">
+    <li>点击查看新闻0</li>
+</ul>
+<a href="javascript:void(0)" id="load-more">加载更多</a>
+
+<script>
+    var btn = document.querySelector('#load-more');
+    var detailCt = document.querySelector('#ct');
+    var pageIndex = 1;
+    var pageLength = 1;
+    var isDataArrive = true;
+    btn.addEventListener('click', function () {
+        if(!isDataArrive) {
+            return;
+        }
+
+        $.get('/loadMore', {index: pageIndex, length: pageLength})
+            .done(function (ret) {
+                isDataArrive = true;
+                var fragment = document.createDocumentFragment();
+                for (var i = 0; i < ret.length; i++) {
+                    var node = document.createElement('li');
+                    node.innerText = ret[i];
+                    fragment.appendChild(node);
+                }
+                detailCt.appendChild(fragment);
+                pageIndex += pageLength;
+                pageLength++;
+                if (pageLength >= 6) {
+                    pageLength = 6;
+                }
+            });
+
+        isDataArrive = false;
+
+    });
+
+</script>
+</body>
+</html>

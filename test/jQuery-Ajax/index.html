@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+  <div class="query-area">
+    <input type="text" name="username" value="hunger" placeholder="hunger, ruoyu, anyone">
+    <button>查询朋友</button>   
+  </div>
+  <div class="detail-area">
+    <ul>     
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    //ajax
+    $.ajax({
+        url: '/getFriends',
+        method: 'get',
+        dataType: 'json',
+        data: {
+            a: 1,
+            b: 2
+        },
+        success: function (ret) {
+            console.log(ret);
+        },
+        error: function () {
+
+        }
+    });
+    $.ajax({
+        url: '/getFriends',
+        method: 'post',
+        dataType: 'json',
+        data: {
+            a: 1,
+            b: 2
+        }
+    }).done(function (ret) {
+        
+    }).error(function () {
+
+    });
+
+    $.get('/getFriends', {a:1, b:2}).done(function (ret) {
+
+    });
+    $.post('/comment', {comment:'这里是饥人谷'}).done(function (ret) {
+
+    })
+
+    //.param
+    var obj  = {a:1, b:2};
+    console.log($.param(obj));//a=1&b=2
+
+    //.serialize 表单序列化
+
+  </script>
+
+
+  <script>
+    var btn = document.querySelector('.query-area button')
+    var input = document.querySelector('.query-area input')
+    
+
+    btn.addEventListener('click', function(){
+       var xhr = new XMLHttpRequest()
+       xhr.onreadystatechange = function(){
+         if(xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 304)){
+          var friends = JSON.parse(xhr.responseText)
+          render(friends)
+         }
+       }
+
+      xhr.open('get', '/getFriends?username=' + input.value, true)
+      xhr.send()
+    })
+
+
+
+
+    function render(friends){
+      var detailCt = document.querySelector('.detail-area ul')
+      detailCt.innerHTML = '';
+      var ct = document.createDocumentFragment()
+      for(var i = 0; i < friends.length; i++){
+        var node = document.createElement('li')
+        node.innerText = friends[i]
+        ct.appendChild(node)
+      }
+      detailCt.appendChild(ct)
+    }
+  </script>
+  
+</body>
+</html>

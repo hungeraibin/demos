@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的常见方法</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+        });
+
+        $(function () {
+            
+        });
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="active">3</li>
+        <li>4</li>
+    </ul>
+    <div class="ct">
+        <div class="ct1">ct1</div>
+        <div class="ct2">--</div>
+        <div class="ct1">ct1</div>
+        <div class="ct2 active">--</div>
+        <div class="ct1">ct1</div>
+    </div>
+</div>
+<script>
+    //each
+    $('.box>ul>li').each(function (index, node) {
+        //console.log(arguments);
+        //console.log($(this));
+        //node.innerText = node.innerText + node.innerText;
+        str = $(node).text();
+        $(node).text(str + str);
+    });
+
+    //map
+    var arr = $('.box>ul>li').map(function () {
+        return $(this).text();
+    });
+    console.log(arr);
+
+    //extend
+    var obj1 = {a: 1};
+    var obj2 = {b: 2, c: 3};
+    var obj3 = {b: 3, d: 5};
+    var obj4 = {};
+    $.extend(obj1, obj2); //obj1 = {a:1, b:2, c:3}
+    $.extend(obj1, obj2, obj3); //obj1 = {a:1, b:3, c:3, d:5}
+    $.extend(obj4, obj1, obj2, obj3);//obj4 = {a:1, b:3, c:3, d:5}
+    var obj5 = $.extend({}, obj1, obj2, obj3);//obj5 = {a:1, b:3, c:3, d:5}
+
+    //index
+    var liNum = $('.active').index();
+    console.log(liNum);
+
+    var ct2 = $('.ct .active').index();
+    var ct2Num = $('.ct .active').index('.ct2');
+    console.log(ct2, ct2Num);
+
+    var aa = [{a:'1'}, {a:2}];
+    //console.log(aa);
+    $.each(aa, function (i ,e) {
+        //console.log(i);
+        //console.log(e)
+        console.log(this.a);
+    });
+</script>
+</body>
+</html>
