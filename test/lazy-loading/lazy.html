@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>懒加载</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<style>
+    ul, li {
+        list-style: none;
+        padding: 0;
+    }
+
+    img {
+        width: 240px;
+        height: 180px;
+    }
+
+    .container {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .container > li {
+        float: left;
+        margin: 6px;
+    }
+
+
+</style>
+<body>
+<ul class="container">
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/16.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/17.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/18.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/19.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/20.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/21.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/22.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/23.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/24.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/25.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/27.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/28.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/29.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/30.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/31.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/32.jpg">
+        </a>
+    </li>
+    <li>
+        <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
+    DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/33.jpg">
+        </a>
+    </li>
+
+</ul>
+
+<script>
+
+    lazyLoad();
+
+    var clock;
+    $(window).on('scroll', function () {
+        if (clock) {
+            clearTimeout(clock);
+        }
+        clock = setTimeout(function () {
+            //console.log('hi')
+            lazyLoad();
+        }, 300);
+    });
+
+    function lazyLoad() {
+        $('.container img').each(function () {
+            var $this = $(this);
+            if ( checkShow($this) && !isLoaded($this) ) {
+                loadImg($this);
+            }
+        });
+    }
+
+    function checkShow($img) {
+        var scrollTop = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        var offsetTop = $img.offset().top;
+        if (offsetTop < scrollTop + windowHeight  && offsetTop > scrollTop) {
+            return true;
+        }
+        return false;
+    }
+
+    function isLoaded($img) {
+        return $img.attr('data-src') === $img.attr('src');
+    }
+
+    function loadImg($img) {
+        $img.attr('src', $img.attr('data-src'));
+    }
+</script>
+</body>
+</html>

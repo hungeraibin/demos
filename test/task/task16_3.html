@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>懒加载测试</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 1000px;
+            background-color: #ccc;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: #666;
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box2"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var flag = 'true';
+
+    $(window).on('scroll', function () {
+        if ( isVisible($('.box2')) && flag === 'true') {
+            console.log('true');
+            flag = 'flase';
+        }
+    });
+
+    function isVisible($node) {
+        var scrollTop = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        var offsetTop = $node.offset().top;
+        return offsetTop < scrollTop + windowHeight && offsetTop > scrollTop;
+    }
+</script>
+</body>
+</html>
