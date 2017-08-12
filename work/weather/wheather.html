@@ -118,15 +118,15 @@
     $.get(ipUrl).done(function (ret) {
         console.log(ret.data);
         var idUrl = '//weixin.jirengu.com/weather/cityid?location=' + ret.data;
-        //console.log(idUrl)
+        console.log(idUrl)
         $.get(idUrl).done(function (ret) {
             var id = ret.results[0].id
-            //console.log(id);
+            console.log(id);
             var addressUrl = '//weixin.jirengu.com/weather/now?cityid=' + id;
             $.get(addressUrl).done(function (ret) {
                 if (ret.status == 'OK') {
                     var weatherObj = ret.weather[0];
-                    //console.log(weatherObj);
+                    console.log(weatherObj);
                     appendHtmls(weatherObj);
                     getTime();
                     appendmore(weatherObj);
