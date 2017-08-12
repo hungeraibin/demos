@@ -112,17 +112,17 @@
         <span></span>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    var ipUrl = 'http://weixin.jirengu.com/weather/ip';
+    var ipUrl = '//weixin.jirengu.com/weather/ip';
     $.get(ipUrl).done(function (ret) {
         console.log(ret.data);
-        var idUrl = 'http://weixin.jirengu.com/weather/cityid?location=' + ret.data;
+        var idUrl = '//weixin.jirengu.com/weather/cityid?location=' + ret.data;
         //console.log(idUrl)
         $.get(idUrl).done(function (ret) {
             var id = ret.results[0].id
             //console.log(id);
-            var addressUrl = 'http://weixin.jirengu.com/weather/now?cityid=' + id;
+            var addressUrl = '//weixin.jirengu.com/weather/now?cityid=' + id;
             $.get(addressUrl).done(function (ret) {
                 if (ret.status == 'OK') {
                     var weatherObj = ret.weather[0];
@@ -132,7 +132,6 @@
                     appendmore(weatherObj);
                 }
             });
-
         });
     });
 
