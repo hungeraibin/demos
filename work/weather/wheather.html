@@ -11,16 +11,18 @@
             background: url("http://desktopwallpapers.org.ua/images/201405/desktopwallpapers.org.ua_34168.jpg") 0 0 no-repeat;
             background-size: cover;
         }
+
         ul, li {
             list-style: none;
             margin: 0;
             padding: 0;
         }
+
         #weather-wrapper .weather-show {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0, 0, 0, 0.6);
             border-bottom: 3px solid #2CA3B4;
         }
 
@@ -42,15 +44,17 @@
         .weather-show > li > p:first-child {
             color: #666;
         }
+
         .date > p:first-child {
             color: #666;
         }
+
         .date > p:last-child {
             font-size: 90px;
             margin: 0;
         }
 
-        .weather-show  img{
+        .weather-show img {
             max-width: 120px;
         }
 
@@ -58,7 +62,7 @@
             max-width: 200px;
         }
 
-        .weather-show .mainer > p{
+        .weather-show .mainer > p {
             margin-bottom: 0;
         }
 
@@ -69,19 +73,22 @@
             text-align: center;
             font-size: 140px;
         }
+
         .address {
             margin-left: 50px;
         }
-        .address span{
+
+        .address span {
             font-size: 30px;
             color: #f7f7f7;
             margin-top: 0;
         }
+
         .address span:last-child {
             font-size: 20px;
             border: 1px solid #666;
             border-radius: 18px;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0, 0, 0, 0.6);
         }
 
     </style>
@@ -102,20 +109,20 @@
     </div>
     <div class="address">
         <span class="iconfont">&#xe60f;</span>
-        <span>中国 </span>
+        <span></span>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-    var ipUrl = 'https://weixin.jirengu.com/weather/ip' ;
+<script>
+    var ipUrl = 'http://weixin.jirengu.com/weather/ip';
     $.get(ipUrl).done(function (ret) {
         console.log(ret.data);
-        var idUrl = 'https://weixin.jirengu.com/weather/cityid?location=' + ret.data;
-        console.log(idUrl)
+        var idUrl = 'http://weixin.jirengu.com/weather/cityid?location=' + ret.data;
+        //console.log(idUrl)
         $.get(idUrl).done(function (ret) {
             var id = ret.results[0].id
             //console.log(id);
-            var addressUrl = 'https://weixin.jirengu.com/weather/now?cityid=' + id;
+            var addressUrl = 'http://weixin.jirengu.com/weather/now?cityid=' + id;
             $.get(addressUrl).done(function (ret) {
                 if (ret.status == 'OK') {
                     var weatherObj = ret.weather[0];
@@ -128,31 +135,10 @@
 
         });
     });
-    //cityIp = cityIp.toString();
-    //console.log(typeof(cityIp));
-    //console.log(cityIp)
-
-    /*var idUrl = `https://weixin.jirengu.com/weather/cityid?location=`;
-    console.log(idUrl)
-    $.get(idUrl).done(function (ret) {
-        console.log(ret);
-    });*/
-
-    /*var addressUrl = 'https://weixin.jirengu.com/weather/now?cityid=WWGQDCW6TBW1';
-    $.get(addressUrl).done(function (ret) {
-        if (ret.status == 'OK') {
-            var weatherObj = ret.weather[0];
-            //console.log(weatherObj);
-            appendHtmls(weatherObj);
-            getTime();
-            appendmore(weatherObj);
-
-        }
-    });*/
 
     function getTime() {
         var curDate = new Date();
-        var curHours =curDate.getHours();
+        var curHours = curDate.getHours();
         var curMinutes = curDate.getMinutes();
         if (curMinutes < 10) {
             curMinutes = '0' + curMinutes;
@@ -164,7 +150,7 @@
         var address = weather.city_name;
         $('.address span:last-child').append(address);
         var temperature = weather.now.temperature;
-        $('.date').append('<p>' +temperature + '°</p>');
+        $('.date').append('<p>' + temperature + '°</p>');
         var upDate = weather.last_update;
         $('.date > p:first-child').append(upDate);
         var codeImg = `//weixin.jirengu.com/images/weather/code/${weather.now.code}.png`;
@@ -185,9 +171,7 @@
 
         });
         $('.weather-show').append(htmls);
-
     }
-
-    </script>
+</script>
 </body>
 </html>
