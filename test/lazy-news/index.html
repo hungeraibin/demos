@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>腾讯新闻</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul, li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .news a {
+            text-decoration: none;
+            color: #333;
+        }
+        .news p {
+            color: #666;
+        }
+        .news .item:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .item h3 ,p{
+            margin-left: 120px;
+        }
+
+        .news > .item img{
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+
+        .load-more {
+            visibility: hidden;
+            height: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="news">
+            <li class="item">
+                <a href="http://news.qq.com/a/20170810/039329.htm">
+                    <img src="http://inews.gtimg.com/newsapp_ls/0/1901619467_150120/0" alt="">
+                    <h3>河南兰考扶贫办官员在办公大楼坠亡 警方正调查</h3>
+                    <p>8月10日下午，河南兰考县扶贫办办公室工作人员回应澎湃...</p>
+                </a>
+            </li>
+            <li class="item">
+                <a href="http://news.qq.com/a/20170810/016104.htm">
+                    <img src="http://inews.gtimg.com/newsapp_ls/0/1901108658_150120/0" alt="">
+                    <h3>印度逾50万人上街抗议 孟买交通瘫痪</h3>
+                    <p>主办单位估计超过200万人参与，宣称这是孟买市历来最大规模的示威抗议...</p>
+                </a>
+            </li>
+        </ul>
+        <p class="load-more"></p>
+    </div>
+
+    <script>
+        var pageIndex = 0;
+        var isOver = false;
+        var isNewsArrive = true;
+        getNews();
+        var clock;
+        $(window).on('scroll', function () {
+            if (clock) {
+                clearTimeout(clock);
+            }
+            clock = setTimeout(function () {
+                checkNews();
+            }, 300);
+
+        });
+        function checkNews() {
+            if  (isShow($('.load-more')) && !isOver && isNewsArrive) {
+                getNews();
+            }
+        }
+        function getNews() {
+            $.get('/getNews', {page: pageIndex}).done(function (ret) {
+                isNewsArrive = false;
+                if (ret.status === 0) {
+                    isNewsArrive = true;
+                    pageIndex++;
+                    appendHtml(ret.data);
+                    checkNews();
+                } else {
+                    alert('获取新闻失败');
+                }
+
+            }).fail(function () {
+                alert('系统异常');
+            });
+        }
+
+        function isShow($node) {
+            var windowHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();
+            var offsetTop = $node.offset().top;
+            var nodeHeight = $node.height();
+            if (offsetTop < windowHeight + scrollTop && offsetTop + nodeHeight > scrollTop) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        function appendHtml(news) {
+            if (news.length === 0) {
+                isOver = true;
+                $('.load-more').remove();
+                $('.container').append('<p>没有更多数据了...</p>');
+                return;
+            }
+            var htmls = '';
+            $.each(news, function () {
+                htmls += '<li class="item">';
+                htmls += '<a href="' + this.link + '">';
+                htmls += '<img src="' + this.img + '" alt="">';
+                htmls += '<h3>' + this.title + '</h3>';
+                htmls += '<p>' + this.brif + '</p>';
+                htmls += '</a></li>';
+            });
+            $('.news').append(htmls);
+        }
+    </script>
+</body>
+</html>
