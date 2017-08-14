@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .img-ct img {
+            width: 400px;
+            height: 260px;
+        }
+
+        .carousel {
+            position: relative;
+            margin: 30px auto;
+            width: 400px;
+            height: 260px;
+            overflow: hidden
+        }
+
+        .img-ct {
+            display: flex;
+            position: absolute;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: #000;
+            opacity: 0.3;
+            font-size: 20px;
+            color: #fff;
+            padding: 2px;
+            text-decoration: none;
+            display: none;
+        }
+
+        .arrow.active {
+            display: block;
+        }
+
+        .arrow:hover {
+            opacity: 0.5;
+        }
+
+        .pre {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .bullet {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%
+        }
+
+        .bullet > li {
+            width: 12px;
+            height: 12px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .bullet > li.active {
+            background-color: #FF6905;
+        }
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <ul class="img-ct">
+        <li data-id="0"><a href="#"><img src="http://ndunited.org/data/upfiles/media/Yussss.jpg"></a></li>
+        <li data-id="1"><a href="#"><img
+                src="https://fpscdn.yam.com/MjY2OTAzMzF3b3JsZA==/116564fbd372f332.png?v=20150331"></a></li>
+        <li data-id="2"><a href="#"><img
+                src="http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201603/09171429hp2kjqr3.jpg"></a></li>
+        <li data-id="3"><a href="#"><img src="http://pic1.win4000.com/wallpaper/7/51b1476eb81a6.jpg"></a></li>
+        <li data-id="4"><a href="#"><img src="http://uzzf.com/up/2016-6/201663082637774860.jpeg"></a></li>
+    </ul>
+    <a href="#" class="pre arrow"><</a>
+    <a href="#" class="next arrow">></a>
+    <ul class="bullet">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    var $carouselCt = $('.carousel');
+    var $imgCt = $('.img-ct');
+    var $imgs = $('.img-ct > li');
+    var $next = $('.next');
+    var $pre = $('.pre');
+    var $bullet = $('.bullet > li');
+    var $arrow = $('.arrow');
+
+    var clock;
+    var isAnimate = false;
+    var pageIndex = 0;
+    var imgWidth = $imgs.width();
+    var imgCount = $imgs.length;
+
+    $imgCt.append($imgs.first().clone());
+    $imgCt.prepend($imgs.last().clone());
+    $imgCt.css({left: -imgWidth});
+
+    autoPlay();
+    $carouselCt.on('mouseenter', function () {
+        stopAuto();
+        $arrow.addClass('active')
+    });
+    $carouselCt.on('mouseleave', function () {
+        autoPlay();
+        $arrow.removeClass('active');
+    });
+    $next.on('click', function () {
+        playNext(1);
+    });
+    $pre.on('click', function () {
+        playPre(1);
+    });
+    $bullet.on('click', function () {
+        var bulletIndex = $(this).index();
+        if (bulletIndex > pageIndex) {
+            playNext(bulletIndex - pageIndex);
+        } else if (bulletIndex < pageIndex) {
+            playPre(pageIndex - bulletIndex);
+        }
+    });
+
+    function playNext(lenth) {
+        if (isAnimate) return;
+        isAnimate = true;
+        $imgCt.animate({
+            left: '-=' + lenth * imgWidth
+        }, function () {
+            pageIndex += lenth;
+            if (pageIndex === imgCount) {
+                pageIndex = 0;
+                $imgCt.css({left: -imgWidth});
+            }
+            setBullet();
+            isAnimate = false;
+        });
+    }
+    function playPre(lenth) {
+        if (isAnimate) return;
+        isAnimate = true;
+        $imgCt.animate({
+            left: '+=' + lenth * imgWidth
+        }, function () {
+            pageIndex -= lenth;
+            if (pageIndex < 0) {
+                pageIndex = imgCount - 1;
+                $imgCt.css({left: -imgWidth * imgCount});
+            }
+            setBullet();
+            isAnimate = false;
+        });
+    }
+    function setBullet() {
+        $bullet.removeClass('active').eq(pageIndex).addClass('active');
+    }
+    function autoPlay() {
+        clock = setInterval(function () {
+            playNext(1);
+        }, 3000);
+    }
+    function stopAuto() {
+        clearInterval(clock);
+    }
+</script>
+</body>
+</html>

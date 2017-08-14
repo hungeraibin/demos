@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐进轮播</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .carousel img {
+            width: 400px;
+            height: 260px;
+        }
+        .carousel {
+            position: relative;
+            width: 400px;
+            height: 260px;
+            overflow: hidden;
+            margin: 30px auto;
+        }
+        .img-ct > li{
+            display: none;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4E443C;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+        .arrow:hover {
+            opacity: 1;
+        }
+        .pre {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .bullet {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%
+        }
+        .bullet > li {
+            width: 30px;
+            height: 8px;
+            margin-left: 10px;
+            background-color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .bullet > li.active {
+            background-color: #4E443C;
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <ul class="img-ct">
+        <li><a href="#"><img src="http://ndunited.org/data/upfiles/media/Yussss.jpg"></a></li>
+        <li><a href="#"><img src="https://fpscdn.yam.com/MjY2OTAzMzF3b3JsZA==/116564fbd372f332.png?v=20150331"></a></li>
+        <li><a href="#"><img src="http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201603/09171429hp2kjqr3.jpg"></a></li>
+        <li><a href="#"><img src="http://pic1.win4000.com/wallpaper/7/51b1476eb81a6.jpg"></a></li>
+        <li><a href="#"><img src="http://uzzf.com/up/2016-6/201663082637774860.jpeg"></a></li>
+    </ul>
+    <a href="#" class="pre arrow"><</a>
+    <a href="#" class="next arrow">></a>
+    <ul class="bullet">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    var $carousel = $('.carousel');
+    var $imgs = $('.img-ct > li');
+    var $pre = $('.pre');
+    var $next = $('.next');
+    var $bullet = $('.bullet > li');
+
+    var isAnimate = false;
+    var curIndex = 0;
+    var imgCount = $imgs.length;
+    var clock;
+
+    $carousel.on('mouseenter', function () {
+        stopAuto();
+    });
+    $carousel.on('mouseleave', function () {
+        autoPlay();
+    });
+    $next.on('click', function () {
+        playNext();
+    });
+    $pre.on('click', function() {
+        playPre();
+    });
+    $bullet.on('click', function () {
+        var bulletIndex = $(this).index();
+        play(bulletIndex);
+    });
+    play(0);
+    autoPlay();
+
+    function playNext() {
+        play( (curIndex + 1) % imgCount );
+        //console.log((curIndex + 1) % imgCount )
+    }
+    function playPre() {
+        play( (curIndex - 1 + imgCount) % imgCount );
+        //console.log((curIndex - 1 + imgCount) % imgCount )
+    }
+    function play(index) {
+        if (isAnimate) return;
+        isAnimate = true;
+        $imgs.eq(curIndex).fadeOut(300);
+        $imgs.eq(index).fadeIn(500 ,function () {
+            isAnimate = false;
+        });
+        curIndex = index;
+        setBullet();
+    }
+    function setBullet() {
+        $bullet.removeClass('active').eq(curIndex).addClass('active');
+    }
+    function autoPlay() {
+        clock = setInterval(function () {
+            playNext();
+        }, 3000);
+    }
+    function stopAuto() {
+        clearInterval(clock);
+    }
+
+</script>
+</body>
+</html>
