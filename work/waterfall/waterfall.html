@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .img-container {
+            position: relative;
+        }
+        .img-container > li {
+            position: absolute;
+            margin-top: 12px;
+            margin-left: 12px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+<ul class="img-container">
+    <li><a href="#"><img src="https://unsplash.it/200/200?image=1"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=2"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/200?image=3"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/400?image=4"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=5"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/200?image=6"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=7"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/200?image=8"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/400?image=9"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/200?image=10"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=11"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/400?image=12"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=13"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=14"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=15"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=16"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=17"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=18"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=19"></a></li>
+    <li><a href="#"><img src="https://unsplash.it/200/300?image=20"></a></li>
+</ul>
+</body>
+<script>
+    waterfall();
+    $(window).on('resize', function () {
+        waterfall();
+    });
+
+    function waterfall() {
+        var columnLength = parseInt( $('.img-container').width() / $('.img-container > li').width() );
+        var imgArr = [];
+        for (var i = 0; i < columnLength; i++) {
+            imgArr[i] = 0;
+        }
+        $('.img-container > li').each(function () {
+            var minHeight  = Math.min.apply(null, imgArr);
+            var minIndex = imgArr.indexOf(minHeight);
+            $(this).css({
+                top: imgArr[minIndex],
+                left: minIndex * $(this).outerWidth(true)
+            });
+
+            imgArr[minIndex] += $(this).outerHeight(true);
+        });
+
+    }
+</script>
+</html>

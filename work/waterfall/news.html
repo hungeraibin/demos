@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        #pic-ct {
+            position: relative;
+        }
+        #pic-ct .item {
+            position: absolute;
+            width: 280px;
+            margin: 10px;
+            border: 1px solid #dfdfdf;
+        }
+        #pic-ct .item img {
+            width: 260px;
+            margin: 10px;
+        }
+        #pic-ct .item .header {
+            height: 25px;
+            margin: 0 12px;
+            border-bottom: 1px solid #dbdbdb;
+        }
+        #pic-ct .item .brif {
+            color: #757575;
+            font-size: 12px;
+            line-height: 1.8;
+            margin: 10px 15px;
+        }
+        #load {
+            visibility: hidden;
+            height: 20px;
+        }
+        .hide {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul id="pic-ct">
+            <!--<li class="item">
+                <a href="http://slide.tech.sina.com.cn/d/slide_5_453_96757.html/d/2">
+                    <img src="http://n.sinaimg.cn/tech/transform/20170812/a7TG-fyixhyw7416405.jpg">
+                </a>
+                <h4 class="header">巴哈马群岛美女海中与鲨鱼群戏水</h4>
+                <p class="brif">这些鲨鱼对人来说并不具危险性，它们大多以小鱼和无脊椎动物为食</p>
+            </li>-->
+            <!--用于计算 item 的宽度和列数，但不展示出来-->
+            <li class="item hide"></li>
+        </ul>
+        <div id="load">我是看不见的</div>
+    </div>
+
+    <script>
+        var isDataArrive = true;
+        var clock;
+        var perPageCount = 10;
+        var curPage = 1;
+        var colSumHeight = [];
+        var nodeWidth = $('.item').outerWidth(true);
+        var colNum = parseInt( $('#pic-ct').width() / nodeWidth );
+        for (var i = 0; i < colNum; i++) {
+            colSumHeight[i] = 0;
+        }
+        if ( isVisible($('#load')) ) {
+            start();
+        }
+        //start();
+        $(window).on('scroll', function () {
+            if (clock) {
+                clearTimeout(clock);
+            }
+            clock = setTimeout(function () {
+                if ( isVisible($('#load')) && isDataArrive) {
+                    start();
+                    //console.log(1)
+                }
+            }, 300);
+        });
+
+        function start() {
+            getData(function (newList) {
+                //console.log(newList);
+                $.each(newList, function (index, news) {
+                    var $node = getNode(news);
+                    $node.find('img').on('load', function () {
+                        $('#pic-ct').append($node);
+                        //console.log($node);
+                        waterfallPlace($node);
+                    });
+                });
+            });
+        }
+
+        function getData(callback) {
+            $.ajax({
+                url: 'http://platform.sina.com.cn/slide/album_tech',
+                dataType: 'jsonp',
+                jsonp: 'jsoncallback',
+                data: {
+                    app_key: '1271687855',
+                    num: perPageCount,
+                    page: curPage
+                }
+            }).done(function (ret) {
+                isDataArrive = false;
+                if (ret && ret.status && ret.status.code === '0') {
+                    isDataArrive = true;
+                    callback(ret.data);
+                    curPage++;
+                } else {
+                    console.log('get error data');
+                }
+            });
+        }
+
+        function getNode(item) {
+            var template = '';
+            template += '<li class="item">';
+            template += '<a href="' + item.url + '"><img src="' + item.img_url + '"></a>';
+            template += '<h4 class="header">' + item.short_name + '</h4>';
+            template += '<p class="brif">' + item.short_intro + '</p></li>';
+
+            return $(template);
+        }
+
+        function waterfallPlace($node) {
+            var minIndex = 0;
+            var minSumHeight = colSumHeight[0];
+            for (var i = 0; i < colSumHeight.length; i++) {
+                if (colSumHeight[i] < minSumHeight) {
+                    minIndex = i;
+                    minSumHeight = colSumHeight[i];
+                }
+            }
+            $node.animate({
+                top: colSumHeight[minIndex],
+                left: nodeWidth * minIndex
+            }, 600);
+
+            colSumHeight[minIndex] += $node.outerHeight(true);
+            $('#pic-ct').height( Math.max.apply(null, colSumHeight) );
+        }
+        function isVisible($node) {
+            var windowHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();
+            var offsetTop = $node.offset().top;
+            if (offsetTop < windowHeight + scrollTop + 100) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

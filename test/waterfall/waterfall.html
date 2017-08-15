@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .content {
+            position: relative;
+        }
+        .content .item {
+            position: absolute;
+            width: 200px;
+            margin-top: 10px;
+            margin-left: 10px;
+            transition: all 1s;
+        }
+        .h1 {
+            height: 200px;
+            background-color: #7eff8e;
+        }
+        .h2 {
+            height: 300px;
+            background-color: #3cfff3;
+        }
+        .h3 {
+            height: 400px;
+            background-color: #ff83ef;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="item h1">1</div>
+    <div class="item h2">2</div>
+    <div class="item h3">3</div>
+    <div class="item h3">4</div>
+    <div class="item h1">5</div>
+    <div class="item h2">6</div>
+    <div class="item h3">7</div>
+    <div class="item h2">8</div>
+    <div class="item h3 ">9</div>
+    <div class="item h2">10</div>
+    <div class="item h3">11</div>
+    <div class="item h1">12</div>
+    <div class="item h2">13</div>
+    <div class="item h1">14</div>
+</div>
+<script>
+
+    //封装
+    var WaterFall = (function () {
+        function init() {
+            waterfall();
+            $(window).resize(function () {
+                waterfall();
+            });
+        }
+        function waterfall() {
+            var colLenght = parseInt( $('.content').width() / $('.item').width() );
+            var itemArr = [];
+            for (var i = 0; i < colLenght; i++) {
+                itemArr[i] = 0;
+            }
+            $('.item').each(function () {
+                var minValue = Math.min.apply(null, itemArr);
+                var minIndex = itemArr.indexOf(minValue);
+
+                $(this).css({
+                    top: itemArr[minIndex],
+                    left: $(this).outerWidth(true) * minIndex
+                });
+
+                itemArr[minIndex] += $(this).outerHeight(true);
+            });
+        }
+        return {
+            init: init
+        }
+    })();
+
+    WaterFall.init();
+
+
+    /*waterfall();
+     $(window).resize(function () {
+     waterfall();
+     });
+
+    function waterfall() {
+        var colLenght = parseInt( $('.content').width() / $('.item').width() );
+        var itemArr = [];
+        for (var i = 0; i < colLenght; i++) {
+            itemArr[i] = 0;
+        }
+        $('.item').each(function () {
+            var minValue = Math.min.apply(null, itemArr);
+            var minIndex = itemArr.indexOf(minValue);
+
+            $(this).css({
+                top: itemArr[minIndex],
+                left: $(this).outerWidth(true) * minIndex
+            });
+
+            itemArr[minIndex] += $(this).outerHeight(true);
+        });
+    }*/
+
+
+</script>
+</body>
+</html>
