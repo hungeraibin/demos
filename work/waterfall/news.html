@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>新闻</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <style>
         * {
             margin: 0;
@@ -114,7 +115,7 @@
 
         function getData(callback) {
             $.ajax({
-                url: 'https://platform.sina.com.cn/slide/album_tech',
+                url: 'http://platform.sina.com.cn/slide/album_tech',
                 dataType: 'jsonp',
                 jsonp: 'jsoncallback',
                 data: {
