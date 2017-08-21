@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>木桶布局</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .img-preview {
+            width: 1000px;
+            margin: 10px auto;
+        }
+
+        .img-row {
+            margin-top: 2px;
+        }
+
+        .img-row:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .img-box {
+            float: left;
+            margin-right: 4px;
+        }
+
+        #load {
+            visibility: hidden;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="img-preview"></div>
+<div id="load">隐藏懒加载</div>
+
+<script>
+    function Barrel($ct) {
+        this.$ct = $ct;
+        this.rowList = [];
+        this.marginOffet = 4;
+        this.baseHeight = 180;
+        this.imgNum = 16;
+        this.clock = null;
+        //this.loadImg();
+    }
+    Barrel.prototype = {
+        loadImg: function (num) {
+            var num = num || 10;
+            var _this = this;
+            var imgUrls = this.getImgUrls(num);
+            $.each(imgUrls, function (index, url) {
+                //console.log(url);
+                var img = new Image();
+                img.src = url;
+                img.onload = function () {
+                    var ratio = img.width / img.height;
+                    var imgInfo = {
+                        target: $(img),
+                        width: _this.baseHeight * ratio + _this.marginOffet,
+                        height: _this.baseHeight,
+                        ratio: ratio
+                    }
+                    _this.render(imgInfo);
+                }
+            });
+        },
+
+        render: function (imgInfo) {
+            var _this = this,
+                clientWidth = this.$ct.width(),
+                rowWidth = 0,
+                newRowHeight = 0,
+                lastImgInfo = imgInfo;
+
+            this.rowList.push(imgInfo);
+            $.each(this.rowList, function (index, imgInfo) {
+                rowWidth += imgInfo.width;
+                if (rowWidth > clientWidth) {
+                    _this.rowList.pop();
+                    rowWidth -= lastImgInfo.width;
+                    newRowHeight = clientWidth * _this.baseHeight / rowWidth;
+
+                    _this.createRow(newRowHeight);
+                    _this.rowList = [];
+                    _this.rowList.push(lastImgInfo);
+                }
+            });
+        },
+
+        createRow: function (newRowHeight) {
+            var $rowCt = $('<div class="img-row"></div>');
+            $.each(this.rowList, function (index, imgInfo) {
+                var $imgCt = $('<div class="img-box"></div>');
+                var $img = $(imgInfo.target);
+                $img.height(newRowHeight);
+                $imgCt.append($img);
+                $rowCt.append($imgCt);
+            });
+            $rowCt.hide().fadeIn(300);
+            this.$ct.append($rowCt);
+        },
+
+        getImgUrls: function (num) {
+            var urls = [];
+            var width, height;
+            for (var i = 0; i < num; i++) {
+                width = Math.floor(Math.random() * 100 + 200);
+                height = Math.floor(Math.random() * 50 + 150);
+                urls.push("https://unsplash.it/" + width + "/" + height + "/?random");
+            }
+            return urls;
+        },
+
+        isVisible: function ($node) {
+            var windowHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();
+            var offsetTop = $node.offset().top;
+            if (offsetTop < windowHeight + scrollTop) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+
+        init: function () {
+            var _this = this;
+            this.loadImg(this.imgNum);
+            $(window).on('scroll', function () {
+                if (_this.clock) {
+                    clearTimeout(_this.clock);
+                }
+                _this.clock = setTimeout(function () {
+                    if (_this.isVisible($('#load'))) {
+                        _this.loadImg();
+                    }
+                }, 200);
+            });
+        }
+    }
+
+    var barrel = new Barrel($('.img-preview'));
+    barrel.init();
+
+</script>
+</body>
+</html>

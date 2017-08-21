@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象测试</title>
+</head>
+<body>
+<script>
+    //对象
+    var obj = {
+        a: 1,
+        b: 'ruoyu',
+        sayName: function () {
+            console.log(this.b); //this指obj
+        }
+    }
+    obj.sayName();
+
+    //自动化
+    function People(name) {
+        this.name = name;
+        this.sayName = function () {
+            console.log(this.name);
+        }
+    }
+    People.prototype.sayName = function () {
+        console.log(this.name);
+    }
+
+    var p1 = new People('hunger');
+    p1.sayName();
+    //1. p1 = {__proto__: prototype}
+    //2. p1.name = 'hunger'
+    //   p1.sayName = function(){}
+    //3. return p1
+    /*
+    p1 = {
+        name: 'hunger',
+        sayName: function() {
+            console.log(this.name); //this指p1
+        },
+        __proto__: prototype
+     }
+    */
+    p1.name;
+    p1.sayName();
+
+    var p2 = new People('valley');
+
+    function Car(name, color, status) {
+        this.name = name;
+        this.color = color;
+        this.status = status;
+    }
+    Car.prototype = {
+        run: function () {
+            console.log('run');
+        },
+        stop: function () {
+            console.log('stop');
+        },
+        getStatus: function () {
+            console.log(this.status);
+        }
+    }
+
+    var car = new Car('Audi', '白色', 'run');
+    car.getStatus();
+</script>
+</body>
+</html>

@@ -70,24 +70,124 @@
     </ul>
 </div>
 
+<div class="tab-container">
+    <ul class="header">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <ul class="content">
+        <li class="active">content1</li>
+        <li>content2</li>
+        <li>content3</li>
+    </ul>
+</div>
 <script>
-    function $$(cls) {
-        return document.querySelectorAll(cls);
-    }
-    $$('.header > li').forEach(function (tab) {
-        tab.addEventListener('click', function () {
-           $$('.header > li').forEach(function (node) {
-               node.classList.remove('active');
-           });
-           this.classList.add('active');
+    /*function Tab(tabNode) {
+        this.init = function () {
+            this.tabs = tabNode.querySelectorAll('.header > li'); //this指对象Tab
+            this.panels = tabNode.querySelectorAll('.content > li');
+            this.tabHeader = tabNode.querySelector('.tab-container .header');
+        }
 
-           var index = [].indexOf.call($$('.header > li'), this);
-           $$('.content > li').forEach(function (node) {
-               node.classList.remove('active');
-           });
-           $$('.content > li')[index].classList.add('active');
-        });
-    });
+        this.bind = function () {
+            var self = this;
+            this.tabHeader.onclick = function (e) {
+                if (e.target.tagName.toLowerCase() === 'li') {
+                    self.tabs.forEach(function (node) {
+                        node.classList.remove('active');
+                    });
+                    e.target.classList.add('active');
+                    var index = [].indexOf.call(self.tabs, e.target);
+                    self.panels.forEach(function (node) {
+                        node.classList.remove('active');
+                    });
+                    self.panels[index].classList.add('active');
+                }
+            }
+        }
+        this.init();
+        this.bind();
+    }*/
+
+    function Tab(tabNode) {
+        this.init(tabNode);
+        this.bind();
+    }
+    Tab.prototype.init = function (tabNode) {
+        this.tabs = tabNode.querySelectorAll('.header > li'); //this指对象Tab
+        this.panels = tabNode.querySelectorAll('.content > li');
+        this.tabHeader = tabNode.querySelector('.tab-container .header');
+    }
+    Tab.prototype.bind = function () {
+        var self = this;
+        this.tabHeader.onclick = function (e) {
+            if (e.target.tagName.toLowerCase() === 'li') {
+                self.tabs.forEach(function (node) {
+                    node.classList.remove('active');
+                });
+                e.target.classList.add('active');
+                var index = [].indexOf.call(self.tabs, e.target);
+                self.panels.forEach(function (node) {
+                    node.classList.remove('active');
+                });
+                self.panels[index].classList.add('active');
+            }
+        }
+    }
+
+    var tabNode1 = document.querySelectorAll('.tab-container')[0];
+    var tabNode2 = document.querySelectorAll('.tab-container')[1];
+    var tab1 = new Tab(tabNode1);
+    var tab2 = new Tab(tabNode2);
+
+
+
+
+ /*  var Tab = {
+        init: function () {
+            this.tabs = document.querySelectorAll('.header > li'); //this指对象Tab
+            this.panels = document.querySelectorAll('.content > li');
+            this.tabHeader = document.querySelector('.tab-container .header');
+            this.bind();
+        },
+        bind: function () {
+            var self = this;
+            this.tabHeader.onclick = function (e) {
+                if (e.target.tagName.toLowerCase() === 'li') {
+                    self.tabs.forEach(function (node) {
+                        node.classList.remove('active');
+                    });
+                    e.target.classList.add('active');
+                    var index = [].indexOf.call(Tab.tabs, e.target);
+                    self.panels.forEach(function (node) {
+                        node.classList.remove('active');
+                    });
+                    self.panels[index].classList.add('active');
+                }
+            }
+        }
+    }
+    Tab.init();*/
+
+
+    /*    function $$(cls) {
+     return document.querySelectorAll(cls);
+     }
+     $$('.header > li').forEach(function (tab) {
+     tab.addEventListener('click', function () {
+     $$('.header > li').forEach(function (node) {
+     node.classList.remove('active');
+     });
+     this.classList.add('active');
+
+     var index = [].indexOf.call($$('.header > li'), this);
+     $$('.content > li').forEach(function (node) {
+     node.classList.remove('active');
+     });
+     $$('.content > li')[index].classList.add('active');
+     });
+     });*/
 </script>
 </body>
 </html>

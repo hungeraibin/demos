@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>木桶布局</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .img-preview {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .img-row {
+            margin-bottom: 8px;
+        }
+
+        .img-row:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .img-box {
+            float: left;
+        }
+
+        .img-line .img-box:first-child {
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="img-preview"></div>
+<script>
+    function Barrel($ct) {
+        this.$ct = $ct;
+        this.rowList = [];
+        this.loadImg();
+    }
+
+    Barrel.prototype = {
+        loadImg: function () {
+            var _this = this;
+            var imgs = this.getImgUrls(10);
+            $.each(imgs, function (index, url) {
+                var img = new Image();
+                img.src = url;
+                img.onload = function () {
+                    //console.log(img.width)
+                    var imgInfo = {
+                        target: img,
+                        width: 200 * (img.width / img.height),
+                        height: 200,
+                    };
+                    //console.log(imgInfo)
+                    _this.render(imgInfo);
+                }
+            });
+
+
+           /* for (var i = 0; i < imgs.length; i++) {
+                var img = new Image();
+                img.src = imgs[i];
+                img.onload = function () {
+                    console.log(img.width)
+                    var imgInfo = {
+                        target: img,
+                        width: 200 * (img.width / img.height),
+                        height: 200,
+                    };
+                    //console.log(imgInfo)
+                    _this.render(imgInfo);
+                }
+            }*/
+        },
+
+        render:　function (imgInfo) {
+            var clientWidth = this.$ct.width();
+            var rowWidth = 0;
+            var newRowHeight = 0;
+            this.rowList.push(imgInfo);
+            for (var i = 0; i < this.rowList.length; i++) {
+                rowWidth = rowWidth + this.rowList[i].width;
+            }
+            if (rowWidth > clientWidth) {
+                this.rowList.pop();
+                newRowHeight = clientWidth * 200 / (rowWidth - imgInfo.width);
+                this.layout(newRowHeight);
+                this.rowList = [];
+                this.rowList.push(imgInfo);
+            }
+        },
+
+        layout: function (newRowHeight) {
+            var $rowCt = $('<div class="img-row"></div>');
+            $.each(this.rowList, function (index, imgInfo) {
+                var $imgCt = $('<div class="img-box"></div>');
+                var $img = $(imgInfo.target);
+                $img.height(newRowHeight);
+                $imgCt.append($img);
+                $rowCt.append($imgCt);
+            });
+            this.$ct.append($rowCt);
+        },
+
+        getImgUrls: function (num) {
+            var color, width, height, urls = [];
+            for (var i = 0; i < num; i++) {
+                color = Math.random().toString(16).substring(2, 8);
+                width = Math.floor(Math.random() * 100 + 50);
+                height = Math.floor(Math.random() * 30 + 50);
+                urls.push('http://placehold.it/' + width + 'x' + height + '/' + color + '/fff');
+            }
+            return urls;
+        }
+    }
+
+    var barrels = new Barrel($('.img-preview'));
+</script>
+</body>
+</html>

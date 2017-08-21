@@ -68,7 +68,7 @@
 
     //  str15 = str15.replace(reg15, 'hello');
     str15 = str15.replace(reg15, function (value) {
-        //   console.log(arguments);
+          console.log(arguments);
         return value[0].toUpperCase() + value.substr(1);
     });
     console.log(str15);

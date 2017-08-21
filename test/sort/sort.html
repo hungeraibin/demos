@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序算法</title>
+</head>
+<body>
+<script>
+    //冒泡排序
+    console.log( bubbleSort([2, 1, 6, 4, 8]) );
+
+    function bubbleSort(array) {
+        var i, j;
+        for (i = 0; i < array.length; i++) {
+            for (j = 0; j < array.length - 1 - i; j++) {
+                if (array[j] <= array[j + 1]) {
+
+                } else {
+                    swap(array, j, j + 1);
+                }
+            }
+        }
+        return array;
+    }
+    
+    //选择排序
+    console.log( bubbleSort([2, 1, 6, 4, 8]) );
+
+    function selectSort(array) {
+        var i, j;
+        var indexOfMin;
+        for (i = 0; i < array.length; i++) {
+            indexOfMin = i;
+            for (j = i + 1; j < array.length; j++) {
+                if (array[j] < array[indexOfMin]) {
+                    indexOfMin = j;
+                }
+            }
+            if (indexOfMin !== i) {
+                swap(array, i, indexOfMin);
+            }
+        }
+        return array;
+    }
+    
+    function swap(arry, a, b) {
+        var temp = arry[a];
+        arry[a] = arry[b];
+        arry[b] = temp;
+    }
+</script>
+</body>
+</html>

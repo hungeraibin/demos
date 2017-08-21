@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回到顶部</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+
+        .ct {
+            margin-top: 1000px;
+        }
+    </style>
+</head>
+<body>
+<div class="ct">
+
+</div>
+<script>
+    function GoTop($ct) {
+        this.$ct = $ct;
+        this.target = $('<button>回到顶部</button>');
+        this.bindEvent();
+        this.createNode();
+    }
+    GoTop.prototype = {
+        bindEvent: function () {
+            this.target.on('click', function () {
+                $('body').animate({scrollTop: 0}, 200);
+            });
+        },
+
+        createNode: function () {
+            this.$ct.append(this.target);
+        }
+    }
+    var goTop = new GoTop($('.ct'));
+</script>
+</body>
+</html>

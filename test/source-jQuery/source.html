@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自制jQurey</title>
+    <style>
+        .xxx {
+            border: 1px solid #333;
+            height: 100px;
+            background-color: red;
+        }
+        .active {
+            background-color: #3cfff3;
+        }
+    </style>
+</head>
+<body>
+<div class="xxx">
+    <p>div text1</p>
+</div>
+<div class="xxx">
+    <p>div text2</p>
+</div>
+
+<script src="jQuery.js"></script>
+<script>
+    var $xxx = $('.xxx');
+    var div1 = $xxx[0];
+    var div2 = $xxx[1];
+    console.log($xxx);
+    //$xxx is an empty object
+    ///console.assert($xxx.on != undefined);
+
+    /*console.log('$xxx.on');
+    console.log($xxx.on);*/
+
+    $xxx.on('click', function () {
+        $xxx.toggleClass('active');
+        $xxx.text('hello')
+        $xxx.html('<b>bin</b>');
+    });
+
+    var textArray = $xxx.text();
+    var text = textArray[0];
+    console.log(text);
+
+    var htmlArray = $xxx.html();
+    console.log(htmlArray);
+
+    $xxx.find('p').end();
+</script>
+</body>
+</html>
