@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tab的滑动实现jQuery</title>
+    <title>Tab滑动组件</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         ul,
@@ -15,6 +15,7 @@
         .tab-container {
             margin-top: 30px;
         }
+
         .header {
             width: 400px;
             margin: 0 auto;
@@ -93,21 +94,57 @@
     </div>
 </div>
 
+<div class="tab-container">
+    <ul class="header">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <div class="wrapper">
+        <ul class="content">
+            <li>content1</li>
+            <li>content2</li>
+            <li>content3</li>
+        </ul>
+    </div>
+</div>
+
 <script>
-    var isAnimate = false;
-    $('.header li').on('click', function () {
-        var $this = $(this);
-        var index = $this.index();
-        //var panelHeight = $('.wrapper').height();
-        $this.addClass('active').siblings().removeClass('active');
-        if (isAnimate) return;
-        isAnimate = true;
-        $this.parents('.tab-container')
-            .find('.wrapper .content')
-            .animate({top: -175*index}, function () {
-                isAnimate = false;
+    var TabSlide = (function () {
+        function Tab($container) {
+            this.$container = $container;
+            this.$headerLi = this.$container.find('.header li');
+            this.panels = this.$container.find('.wrapper .content');
+            this.isAnimate = false;
+            this.bind();
+        }
+
+        Tab.prototype.bind = function () {
+            var _this = this;
+            this.$headerLi.on('click', function () {
+                var $this = $(this);
+                var index = $this.index();
+                $this.addClass('active').siblings().removeClass('active');
+                if (_this.isAnimate) return;
+                _this.isAnimate = true;
+                _this.panels.animate({top: -175 * index}, function () {
+                    _this.isAnimate = false;
+                });
             });
-    });
+        };
+
+        return {
+            init: function ($container) {
+                $container.each(function (index, target) {
+                    new Tab($(target));
+                });
+            }
+        };
+    })();
+
+    TabSlide.init($('.tab-container'));
+
+
 </script>
 </body>
 </html>

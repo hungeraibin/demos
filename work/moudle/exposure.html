@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>懒加载</title>
+    <title>曝光组件</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         ul, li {
             list-style: none;
             padding: 0;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
         }
 
         img {
@@ -24,13 +30,11 @@
             float: left;
             margin: 6px;
         }
-
-
     </style>
 </head>
 
 <body>
-<ul class="container">
+<ul class="container clearfix">
     <li>
         <a href="#"><img src="http://imgs12.iaweg.com/pic/HTTP2YuaGlwaG90b3MuYmFpZHUuY29tL3poaWRhby93aCUzRDQ1MCUyQzYwMC9zaWduPTA0YjdhY2Y1NTdmYmIyZmIzN
     DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/16.jpg">
@@ -121,50 +125,66 @@
     DdlNTAxNjdhN2EwYzkyL2QwMTM3M2YwODIwMjVhYWZmOTU2ZGE2M2Y5ZWRhYjY0MDM0ZjFhMzUuanBn.jpg" data-src="http://cdn.jirengu.com/book.jirengu.com/img/33.jpg">
         </a>
     </li>
-
 </ul>
-
+<p id="load-more">加载更多</p>
 <script>
-
-    lazyLoad();
-
-    var clock;
-    $(window).on('scroll', function () {
-        if (clock) {
-            clearTimeout(clock);
-        }
-        clock = setTimeout(function () {
-            //console.log('hi')
-            lazyLoad();
-        }, 300);
-    });
-
-    function lazyLoad() {
-        $('.container img').each(function () {
-            var $this = $(this);
-            if ( checkShow($this) && !isLoaded($this) ) {
-                loadImg($this);
+    var Exposure = (function () {
+        function _Exposure($target, callback) {
+            this.$target = $target;
+            this.callback = callback;
+            this.clock = null;
+            this.lazyLoad();
+            this.bind();
+        };
+        _Exposure.prototype.bind = function () {
+            var _this = this;
+            $(window).on('scroll', function () {
+                if (_this.clock) {
+                    clearTimeout(_this.clock);
+                }
+                _this.clock = setTimeout(function () {
+                    _this.lazyLoad();
+                }, 200);
+            });
+        };
+        _Exposure.prototype.lazyLoad = function () {
+            if (this.checkShow(this.$target)) {
+                this.callback(this.$target);
             }
-        });
-    }
+        };
+        _Exposure.prototype.checkShow = function ($img) {
+            var scrollTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            var offsetTop = $img.offset().top;
+            if (offsetTop < scrollTop + windowHeight  && offsetTop > scrollTop) {
+                return true;
+            }
+            return false;
+        };
 
-    function checkShow($img) {
-        var scrollTop = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        var offsetTop = $img.offset().top;
-        if (offsetTop < scrollTop + windowHeight  && offsetTop > scrollTop) {
-            return true;
-        }
-        return false;
-    }
+        return {
+            init: function ($target, callback) {
+               $target.each(function (index, target) {
+                   new _Exposure($(target), callback);
+               });
+            }
+        };
+    })();
 
-    function isLoaded($img) {
-        return $img.attr('data-src') === $img.attr('src');
-    }
-
+    //图片曝光加载
+    Exposure.init($('.container img'), function ($node) {
+        loadImg($node);
+    });
     function loadImg($img) {
         $img.attr('src', $img.attr('data-src'));
     }
+
+    //加载更多曝光
+    Exposure.init($('#load-more'), function ($node) {
+        $node.text( $node.text() + ' load more ' );
+    });
+
+
 </script>
 </body>
 </html>

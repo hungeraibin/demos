@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab组件</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .tab-container {
+            margin-top: 30px;
+        }
+
+        .header {
+            width: 400px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .header > li {
+            line-height: 40px;
+            border: 1px solid #ccc;
+            border-right: none;
+            flex-grow: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .header > li:last-child {
+            border-right: 1px solid #ccc;
+        }
+
+        .header .active {
+            background-color: #ccc;
+        }
+
+        .header > li:hover {
+            background-color: #ddd;
+            opacity: 0.8;
+        }
+
+        .content > li {
+            width: 358px;
+            height: 150px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-top: none;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .content .active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tab-container">
+    <ul class="header">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <ul class="content">
+        <li class="active">content1</li>
+        <li>content2</li>
+        <li>content3</li>
+    </ul>
+</div>
+<div class="tab-container">
+    <ul class="header">
+        <li class="panel active">tab1</li>
+        <li class="panel">tab2</li>
+        <li class="panel">tab3</li>
+    </ul>
+    <ul class="content">
+        <li class="active">content1</li>
+        <li>content2</li>
+        <li>content3</li>
+    </ul>
+</div>
+<div class="tab-container">
+    <ul class="header">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <ul class="content">
+        <li class="active">content1</li>
+        <li>content2</li>
+        <li>content3</li>
+    </ul>
+</div>
+
+<script>
+    var Tab = (function () {
+        function _Tab($ct) {
+            this.$ct = $ct;
+            this.init();
+        }
+        _Tab.prototype.init = function () {
+            this.$header = this.$ct.find('.header');
+            this.$panel = this.$ct.find('.content > li');
+            this.bind();
+        };
+        _Tab.prototype.bind = function () {
+            var _this = this;
+            this.$header.on('click', 'li', function () {
+                var $this = $(this);
+                var index = $this.index();
+                $this.addClass('active').siblings().removeClass('active');
+                _this.$panel.eq(index).addClass('active').siblings().removeClass('active');
+            });
+        };
+
+        return {
+            init: function ($ct) {
+                $ct.each(function (index, tab) {
+                    new _Tab($(tab));//转化为jQuery对象
+                });
+            }
+        };
+    })();
+
+    Tab.init($('.tab-container'));
+
+</script>
+</body>
+</html>

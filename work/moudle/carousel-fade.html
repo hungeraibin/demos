@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐进轮播组件</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .carousel img {
+            width: 400px;
+            height: 260px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 400px;
+            height: 260px;
+            overflow: hidden;
+            margin: 30px auto;
+        }
+
+        .img-ct > li {
+            display: none;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4E443C;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .arrow:hover {
+            opacity: 1;
+        }
+
+        .pre {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .bullet {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%
+        }
+
+        .bullet > li {
+            width: 30px;
+            height: 8px;
+            margin-left: 10px;
+            background-color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .bullet > li.active {
+            background-color: #4E443C;
+            opacity: 0.7;
+        }
+
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <ul class="img-ct">
+        <li><a href="#"><img src="http://ndunited.org/data/upfiles/media/Yussss.jpg"></a></li>
+        <li><a href="#"><img src="https://fpscdn.yam.com/MjY2OTAzMzF3b3JsZA==/116564fbd372f332.png?v=20150331"></a></li>
+        <li><a href="#"><img src="http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201603/09171429hp2kjqr3.jpg"></a></li>
+        <li><a href="#"><img src="http://pic1.win4000.com/wallpaper/7/51b1476eb81a6.jpg"></a></li>
+        <li><a href="#"><img src="http://uzzf.com/up/2016-6/201663082637774860.jpeg"></a></li>
+    </ul>
+    <a href="#" class="pre arrow"><</a>
+    <a href="#" class="next arrow">></a>
+    <ul class="bullet">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div class="carousel">
+    <ul class="img-ct">
+        <li><a href="#"><img src="http://ndunited.org/data/upfiles/media/Yussss.jpg"></a></li>
+        <li><a href="#"><img src="https://fpscdn.yam.com/MjY2OTAzMzF3b3JsZA==/116564fbd372f332.png?v=20150331"></a></li>
+        <li><a href="#"><img src="http://cdn.aixifan.com/dotnet/artemis/u/cms/www/201603/09171429hp2kjqr3.jpg"></a></li>
+        <li><a href="#"><img src="http://pic1.win4000.com/wallpaper/7/51b1476eb81a6.jpg"></a></li>
+        <li><a href="#"><img src="http://uzzf.com/up/2016-6/201663082637774860.jpeg"></a></li>
+    </ul>
+    <a href="#" class="pre arrow"><</a>
+    <a href="#" class="next arrow">></a>
+    <ul class="bullet">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    var CarouselFade = (function () {
+        function Carousel($container) {
+            this.$container = $container;
+            this.init();
+            this.bind();
+            this.play(0);
+            this.autoPlay();
+        }
+
+        Carousel.prototype.init = function () {
+            this.$imgs = this.$container.find('.img-ct > li');
+            this.$pre = this.$container.find('.pre');
+            this.$next = this.$container.find('.next');
+            this.$bullet = this.$container.find('.bullet > li');
+
+            this.isAnimate = false;
+            this.curIndex = 0;
+            this.imgCount = this.$imgs.length;
+            this.clock = null;
+        };
+        Carousel.prototype.bind = function () {
+            var _this = this;
+            this.$container.on('mouseenter', function () {
+                _this.stopAuto();
+            });
+            this.$container.on('mouseleave', function () {
+                _this.autoPlay();
+            });
+            this.$next.on('click', function (e) {
+                e.preventDefault();
+                _this.playNext();
+            });
+            this.$pre.on('click', function (e) {
+                e.preventDefault();
+                _this.playPre();
+            });
+            this.$bullet.on('click', function () {
+                var bulletIndex = $(this).index();
+                _this.play(bulletIndex);
+            });
+        };
+        Carousel.prototype.play = function (index) {
+            var _this = this;
+            if (this.isAnimate) return;
+            this.isAnimate = true;
+            this.$imgs.eq(this.curIndex).fadeOut(300);
+            this.$imgs.eq(index).fadeIn(500, function () {
+                _this.isAnimate = false;
+            });
+            this.curIndex = index;
+            this.setBullet();
+        };
+        Carousel.prototype.playNext = function () {
+            this.play((this.curIndex + 1) % this.imgCount);
+        };
+        Carousel.prototype.playPre = function () {
+            this.play((this.curIndex - 1 + this.imgCount) % this.imgCount);
+        };
+        Carousel.prototype.setBullet = function () {
+            this.$bullet.removeClass('active').eq(this.curIndex).addClass('active');
+        };
+        Carousel.prototype.autoPlay = function () {
+            var _this = this;
+            this.clock = setInterval(function () {
+                _this.playNext();
+            }, 3000);
+        };
+        Carousel.prototype.stopAuto = function () {
+            var _this = this;
+            clearInterval(_this.clock);
+        };
+
+        return {
+            init: function ($container) {
+                $container.each(function (index, target) {
+                    new Carousel($(target));
+                });
+            }
+        };
+    })();
+
+    CarouselFade.init($('.carousel'));
+
+</script>
+</body>
+</html>

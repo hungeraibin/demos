@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高级2作业</title>
+</head>
+<body>
+<script>
+    //2 this
+    var john = {
+        firstName: "John"
+    };
+    function func() {
+        alert(this.firstName + ": hi!")
+    }
+    john.sayHi = func;
+    john.sayHi(); //John: hi!
+
+    //3
+    func(); //object Window
+    function func() {
+        alert(this);
+    }
+
+    //4
+    document.addEventListener('click', function(e){
+        console.log(this); //document
+        setTimeout(function(){
+            console.log(this); //window
+        }, 200);
+    }, false);
+
+    //5
+    var john = {
+        firstName: "John"
+    };
+
+    function func() {
+        alert( this.firstName );//Jhon
+    }
+    func.call(john);
+
+    //6
+    var module= {
+        bind: function(){
+            $btn.on('click', function(){
+                console.log(this) //btn
+                this.showMsg();//error
+            });
+        },
+
+        showMsg: function(){
+            console.log('饥人谷');
+        }
+    }
+
+    //原型链
+    function Person(name){
+        this.name = name;
+    }
+    Person.prototype.sayName = function(){
+        console.log('My name is :' + this.name);
+    }
+    var p = new Person("若愚");
+    p.sayName();
+
+    //9
+    String.prototype.getMostOften = function() {
+        var arr = this.split('');
+        var count = 0;
+        var obj = {};
+        var value;
+        arr.forEach(function (e) {
+            if (obj[e]) {
+                obj[e] += 1;
+            } else {
+                obj[e] = 1;
+            }
+        });
+        for (var key in obj) {
+            if (obj[key] > count) {
+                count = obj[key];
+                value = key;
+            }
+        }
+        return '频率最高的是：' + value + '\n出现次数：' + count;
+
+    }
+    var str = 'ahbbccdeddddfg';
+    var ch = str.getMostOften();
+    console.log(ch); //d , 因为d 出现了5次
+    
+    //10 判断一个对象是不是某个类型的实例
+    p1.__proto__ === Person.prototype;
+    p1.__proto__.__proto__ === Person.prototype;
+
+    //继承12
+    //方法1
+    function People(name, sex){
+        this.name = name;
+        this.sex = sex;
+        this.printName = function(){
+            console.log(this.name);
+        }
+    }
+    var p1 = new People('饥人谷', 2)
+
+    //方法2
+    function Person(name, sex){
+        this.name = name;
+        this.sex = sex;
+    }
+
+    Person.prototype.printName = function(){
+        console.log(this.name); //省内存
+    }
+    var p1 = new Person('若愚', 27);
+
+    //15
+    function Person(name, sex){
+        this.name = name;
+        this.sex = sex;
+    }
+    function Male(name, sex, age){
+        Person.call(this, name, sex);    //调用Person，设置作用域为Male
+        this.age = age;
+
+    }
+    //16
+    function Person(name, sex){
+        this.name = name;
+        this.sex = sex;
+    }
+
+    Person.prototype.printName = function(){
+        console.log(this.name);
+    };
+
+    function Male(name, sex, age){
+        Person.call(this, name, sex);
+        this.age = age;
+    }
+
+    Male.prototype = Object.create(Person.prototype);
+    Male.prototype.constructor = Male;
+    Male.prototype.getAge = function(){
+        console.log(this.age);
+    };
+
+    var ruoyu = new Male('若愚', '男', 27);
+    ruoyu.printName();
+
+
+
+</script>
+</body>
+</html>

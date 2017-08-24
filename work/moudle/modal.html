@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框组件</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .modal-dialog {
+            display: none;
+        }
+
+        .modal-cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .modal-container .header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding: 0 20px;
+        }
+
+        .modal-container a {
+            text-decoration: none;
+            color: #ccc;
+            font-size: 25px;
+            line-height: 60px;
+        }
+
+        .modal-container a:hover {
+            color: #a7a7a7;
+        }
+
+        .modal-container .content {
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .modal-container .footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px 20px;
+        }
+
+        .btn {
+            display: block;
+            margin-bottom: 20px;
+            padding: 6px 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #027ed9;
+            cursor: pointer;
+        }
+
+        .footer .btn-close {
+            color: #333;
+            background-color: #fff;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #025AA5;
+        }
+
+        .footer .btn-close:hover {
+            background-color: #E6E6E6;
+        }
+
+    </style>
+</head>
+<body>
+<h2>模态框组件(Modal Moudle)</h2>
+<button id="open1" class="btn">开始演示模态框1</button>
+<button id="open2" class="btn">开始演示模态框2</button>
+<button id="open3" class="btn">开始演示模态框3</button>
+<script>
+    var Dialog = (function () {
+        function Modal() {
+            this.createDialog();
+            this.bindEvent();
+        }
+
+        Modal.prototype = {
+            defaultOpts: {
+                title: '',
+                message: '',
+                isShowCloseBtn: true,
+                isShowConfirmBtn: true,
+                onClose: function () {
+                },
+                onConfirm: function () {
+                }
+            },
+
+            open: function (opts) {
+                this.setOpts(opts);
+                this.setDialog();
+                this.showDialog();
+            },
+
+            setOpts: function (opts) {
+                if (typeof opts === 'string') {
+                    this.opts = $.extend({}, this.defaultOpts, {message: opts});
+                } else if (typeof opts === 'object') {
+                    this.opts = $.extend({}, this.defaultOpts, opts);
+                }
+            },
+
+            createDialog: function () {
+                var tp1 = '<div class="modal-dialog">' +
+                    '<div class="modal-cover"></div>' +
+                    '<div class="modal-container">' +
+                    '<div class="header"><h2></h2>' +
+                    '<a class="btn-close" href="#">×</a></div>' +
+                    '<div class="content"></div>' +
+                    '<div class="footer">' +
+                    '<button class="btn btn-close">关闭</button>' +
+                    '<button class="btn btn-submit">提交更改</button>' +
+                    '</div></div></div>';
+                this.$dialog = $(tp1);
+                $('body').append(this.$dialog);
+            },
+
+            setDialog: function () {
+                var $dialog = this.$dialog;
+                if (!this.opts.title) {
+                    $dialog.find('.header').hide();
+                } else {
+                    $dialog.find('.header').show();
+                }
+                if (!this.opts.isShowCloseBtn) {
+                    $dialog.find('.footer .btn-close').hide();
+                } else {
+                    $dialog.find('.footer .btn-close').show();
+                }
+                if (!this.opts.isShowConfirmBtn) {
+                    $dialog.find('.footer .btn-submit').hide();
+                } else {
+                    $dialog.find('.footer .btn-submit').show();
+                }
+                $dialog.find('.header h2').text(this.opts.title);
+                $dialog.find('.content').html(this.opts.message);
+
+            },
+
+            bindEvent: function () {
+                var _this = this;
+                _this.$dialog.find('.btn-close').on('click', function (e) {
+                    e.preventDefault();
+                    _this.opts.onClose();
+                    _this.hideDialog();
+                });
+                _this.$dialog.find('.btn-submit').on('click', function (e) {
+                    e.preventDefault();
+                    _this.opts.onConfirm();
+                    _this.hideDialog();
+                });
+            },
+
+            showDialog: function () {
+                this.$dialog.show();
+            },
+            hideDialog: function () {
+                this.$dialog.hide();
+            }
+
+        };
+
+        return new Modal();
+    })();
+
+
+    $('#open1').on('click', function () {
+        Dialog.open({
+            title: 'Title',
+            message: 'Please add message',
+            isShowCloseBtn: false,
+            isShowConfirmBtn: false
+        });
+    });
+
+    $('#open2').on('click', function () {
+        var tp1 = '<p>在这里添加一些文本...</p>' +
+            '<p>点击关闭按钮检查事件功能...</p>';
+        Dialog.open({
+            title: '模态框(Modal)标题',
+            message: tp1,
+            isShowCloseBtn: true,
+            isShowConfirmBtn: true,
+            onConfirm: function () {
+                alert('请确认信息');
+            }
+        });
+    });
+
+    $('#open3').on('click', function () {
+        var tp1 = '<ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>';
+        Dialog.open({
+            title: 'Hunger Aibin',
+            message: tp1,
+            isShowCloseBtn: true,
+            isShowConfirmBtn: true,
+            onClose: function () {
+                alert('close');
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

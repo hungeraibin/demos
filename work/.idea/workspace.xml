@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac8b7cf8-a302-46c5-8879-ba9ab5d5aa4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/barrellayout/barrel.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/carousel/a.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/jQuery-Ajax/router.js" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/calendar/calendar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/calendar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/carousel-fade.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/carousel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/exposure.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/modal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/tab-slide.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/tab.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/GoTop.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../test/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/RegExp/regexp.html" afterPath="$PROJECT_DIR$/../test/RegExp/regexp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/event/event2.html" afterPath="$PROJECT_DIR$/../test/event/event2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/flex/flex2.html" afterPath="$PROJECT_DIR$/../test/flex/flex2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/float/float1.css" afterPath="$PROJECT_DIR$/../test/float/float1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/layout/layout-center.html" afterPath="$PROJECT_DIR$/../test/layout/layout-center.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/setTimeout/setTimeout.html" afterPath="$PROJECT_DIR$/../test/setTimeout/setTimeout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/style/css2.html" afterPath="$PROJECT_DIR$/../test/style/css2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/tab/tab.html" afterPath="$PROJECT_DIR$/../test/tab/tab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/BarrelLayout/barrel.html" afterPath="$PROJECT_DIR$/../test/BarrelLayout/barrel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/lazy-loading/lazy.html" afterPath="$PROJECT_DIR$/../test/lazy-loading/lazy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/tab/tab-slide-updown.html" afterPath="$PROJECT_DIR$/../test/tab/tab-slide-updown.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/waterfall/news.html" afterPath="$PROJECT_DIR$/waterfall/news.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weather/wheather.html" afterPath="$PROJECT_DIR$/weather/wheather.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,52 +36,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/waterfall/news.html">
+      <file leaf-file-name="carousel.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/moudle/carousel.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1434">
-              <caret line="98" column="13" lean-forward="false" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+            <state relative-caret-position="486">
+              <caret line="158" column="35" lean-forward="false" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="barrel.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/barrellayout/barrel.html">
+      <file leaf-file-name="carousel-fade.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/moudle/carousel-fade.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="waterfall.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/waterfall/waterfall.html">
+      <file leaf-file-name="modal.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/moudle/modal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
+            <state relative-caret-position="426">
+              <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Carousel.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Carousel/Carousel.html">
+      <file leaf-file-name="calendar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/moudle/calendar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2340">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fade-carousel.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Carousel/fade-carousel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="74" column="8" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="690">
+              <caret line="365" column="0" lean-forward="true" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
+              <folding>
+                <marker date="1503554007188" expanded="true" signature="5256:5268" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,13 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/trip/trip.css" />
-        <option value="$PROJECT_DIR$/trip/img/share.css" />
-        <option value="$PROJECT_DIR$/trip/fontstyle.css" />
-        <option value="$PROJECT_DIR$/trip/contact.css" />
-        <option value="$PROJECT_DIR$/icon/sprites.html" />
-        <option value="$PROJECT_DIR$/trip/share.css" />
-        <option value="$PROJECT_DIR$/trip/scenery.css" />
         <option value="$PROJECT_DIR$/icon/iconfont.html" />
         <option value="$PROJECT_DIR$/trip/sogatrip.css" />
         <option value="$PROJECT_DIR$/trip/trip.html" />
@@ -155,6 +139,13 @@
         <option value="$PROJECT_DIR$/a.html" />
         <option value="$PROJECT_DIR$/CSS8/duty_8-3.html" />
         <option value="$PROJECT_DIR$/barrellayout/barrel.html" />
+        <option value="$PROJECT_DIR$/moudle/tab.html" />
+        <option value="$PROJECT_DIR$/moudle/modal.html" />
+        <option value="$PROJECT_DIR$/moudle/exposure.html" />
+        <option value="$PROJECT_DIR$/moudle/tab-slide.html" />
+        <option value="$PROJECT_DIR$/moudle/carousel.html" />
+        <option value="$PROJECT_DIR$/moudle/carousel-fade.html" />
+        <option value="$PROJECT_DIR$/moudle/calendar.html" />
       </list>
     </option>
   </component>
@@ -173,10 +164,12 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1924" />
+    <option name="width" value="1938" />
     <option name="height" value="1050" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -373,12 +366,15 @@
       <workItem from="1502938650840" duration="6296000" />
       <workItem from="1503117558360" duration="4654000" />
       <workItem from="1503210324949" duration="108000" />
-      <workItem from="1503299431010" duration="13706000" />
+      <workItem from="1503299431010" duration="14157000" />
+      <workItem from="1503365407589" duration="1189000" />
+      <workItem from="1503466662211" duration="30731000" />
+      <workItem from="1503541240927" duration="8301000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="370946000" />
+    <option name="totallyTimeSpent" value="411618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,10 +382,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1924" height="1050" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15297297" sideWeight="0.493266" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1582618" sideWeight="0.493266" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -458,55 +454,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CSS8/duty_8-3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS8/duty_8-4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CSS8/duty_8-5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/closure/task1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="906">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event/event.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event/event2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="30" column="6" lean-forward="false" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event/event3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1266">
-          <caret line="65" column="8" lean-forward="false" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/event/event3-2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -630,13 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2430">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery/tab-slideLR.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1794">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -780,33 +720,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Carousel/fade-carousel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="74" column="8" lean-forward="false" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/waterfall/waterfall.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
+        <state relative-caret-position="1920">
           <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Carousel/Carousel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2340">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/waterfall/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1434">
+        <state relative-caret-position="2940">
           <caret line="98" column="13" lean-forward="false" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
           <folding />
         </state>
@@ -815,8 +739,90 @@
     <entry file="file://$PROJECT_DIR$/barrellayout/barrel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
-          <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/tab-slideLR.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Carousel/Carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/exposure.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="996">
+          <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/tab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2844">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Carousel/fade-carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/tab-slide.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="110" column="0" lean-forward="true" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="158" column="35" lean-forward="false" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/carousel-fade.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="365" column="0" lean-forward="true" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
+          <folding>
+            <marker date="1503554007188" expanded="true" signature="5256:5268" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

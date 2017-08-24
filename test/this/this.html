@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<script>
+    //1
+    console.log(this); //window
+    var a = 1; //window.a = 1  this.a
+
+    //2
+    function fn1(){
+        console.log(this); //window
+    }
+    fn1();
+
+    function fn0(){
+        function fn(){
+            console.log(this); //window
+        }
+        fn();
+    }
+    fn0();
+
+    //3
+    document.addEventListener('click', function(e){
+        console.log(this); //document
+        var _this = this;
+        setTimeout(function(){
+            console.log(this); //window
+            console.log(_this);
+        }, 200);
+    }, false);
+
+    //4
+    var obj1 = {
+        name: 'Byron',
+        fn : function(){
+            console.log(this); //obj1 谁./调用这个函数this就指谁
+        }
+    };
+    obj1.fn();
+
+    var obj2 = {
+        name: 'Byron',
+        obj3: {
+            fn : function(){
+                console.log(this); //obj3 谁.
+            }
+        }
+    };
+    obj2.obj3.fn();
+
+    var fn2 = obj1.fn;
+    fn2(); //window.fn2()
+
+    //bind
+    var obj3 = {a: 3};
+    var fn3 = obj1.fn.bind(obj3); //this指obj3
+    fn3();
+
+    document.addEventListener('click', function(e){
+        console.log(this); //document
+        setTimeout(function(){
+            console.log(this); //document
+        }.bind(this), 200);
+    }, false);
+
+    //call apply
+    fn.call(context, param1, param2); //执行fn fn里的this代表context执行上下文
+
+    var value = 100;
+    var obj = {
+        value: 200
+    }
+    function fn4(a, b) {
+        console.log(this.value + a + b);
+    }
+    fn4(3, 4);//107
+    fn4.call(obj, 3, 4);//207
+    fn4.apply(obj, [3, 4]);//数组对应参数
+
+    //max
+    var arr = [1, 8, 3, 9];
+    Math.max(1, 8, 3, 9);
+    Math.max.apply(null, arr);
+    
+    function joinStr() {
+        //[].join.call()
+        //return Array.prototype.join.call(arguments, '-');
+        var join = Array.prototype.join.bind(arguments);
+        join('-');
+    }
+    joinStr('a', 'b', 'c');
+
+    //变量
+    function ClassA(){
+        var a = 1; //私有变量，只有函数内部可以访问
+        this.b = 2; //实例变量，只有实例可以访问
+    }
+
+    ClassA.c = 3; // 静态变量，也就是属性，类型访问
+
+    console.log(a); // error
+    console.log(ClassA.b) // undefined
+    console.log(ClassA.c) //3
+
+    var classa = new ClassA();
+    console.log(classa.a);//undefined
+    console.log(classa.b);// 2
+    console.log(classa.c);//undefined
+
+    //原型链
+    //instant of 判断 p1 instant of Person
+    p1.__proto__ === Person.prototype;
+    p1.__proto__.__proto__ === Person.prototype;
+
+    //
+    [1, 2, 3] instanceof Array; //true
+    [1, 2, 3] instanceof Object; //true
+
+</script>
+</body>
+</html>
