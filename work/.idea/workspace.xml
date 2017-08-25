@@ -2,81 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac8b7cf8-a302-46c5-8879-ba9ab5d5aa4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/Bangkok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/Sydney.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/bali.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/cat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/china.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/connect.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/contact.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/food.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/gui.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/guo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/hotel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/las.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/london.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/love.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/plane.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/travel.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/travel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/travel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/Bangkok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/Sydney.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/bali.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/cat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/china.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/connect.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/contact.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/food.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/gui.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/guo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/hotel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/las.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/london.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/love.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/plane.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/travel.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/travel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/dist/js/index.merge.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/css/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/app/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/build.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/com/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/lib/jquery-3.2.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/lib/require.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/GoTop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/carousel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/scenery.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/sogatrip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/waterfall.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/dist/js/index.merge.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/carousel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/contact.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/gotop.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/groups.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/scenery.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/share.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/sogatrip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/app/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/build.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/com/carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/com/gotop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/com/waterfall.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/lib/jquery-3.2.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/lib/require.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/../test/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/.idea/test.iml" afterPath="$PROJECT_DIR$/../test/.idea/test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../test/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/tab/jQuery-tab.html" afterPath="$PROJECT_DIR$/../test/tab/jQuery-tab.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -96,7 +22,18 @@
     <favorites_list name="work" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="231" column="0" lean-forward="true" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -161,9 +98,9 @@
         <option value="$PROJECT_DIR$/www/src/css/share.css" />
         <option value="$PROJECT_DIR$/www/src/css/groups.css" />
         <option value="$PROJECT_DIR$/www/src/css/sogatrip.css" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www-carousel/waterfall.html" />
         <option value="$PROJECT_DIR$/www/src/js/com/waterfall.js" />
+        <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
   </component>
@@ -442,12 +379,12 @@
       <workItem from="1503365407589" duration="1189000" />
       <workItem from="1503466662211" duration="30731000" />
       <workItem from="1503541240927" duration="8896000" />
-      <workItem from="1503635510823" duration="26395000" />
+      <workItem from="1503635510823" duration="26781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="438608000" />
+    <option name="totallyTimeSpent" value="438994000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,10 +392,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
-    <editor active="false" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16040772" sideWeight="0.493266" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16040772" sideWeight="0.493266" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -865,14 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/src/js/com/waterfall.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -917,6 +846,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
           <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="231" column="0" lean-forward="true" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
           <folding />
         </state>
       </provider>
