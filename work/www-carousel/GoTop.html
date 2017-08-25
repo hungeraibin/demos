@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回到顶部</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            height: 1000px;
+        }
+
+        .gotop {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+        }
+        .gotop button {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            background-color: #fed136;
+            padding: 20px 40px;
+            color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            box-shadow: 2px 4px 10px 0 rgba(0,0,0,0.2);
+            cursor: pointer;
+            opacity: .9;
+        }
+
+        .load-more button:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="gotop"></div>
+<script>
+    function GoTop($ct) {
+        this.$ct = $ct;
+        this.target = $('<button>回到顶部</button>');
+        this.bindEvent();
+        this.createNode();
+    }
+    GoTop.prototype = {
+        bindEvent: function () {
+            this.target.on('click', function () {
+                $('body').animate({scrollTop: 0}, 200);
+            });
+        },
+
+        createNode: function () {
+            this.$ct.append(this.target);
+        }
+    }
+    var goTop = new GoTop($('.gotop'));
+</script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动轮播组件</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="sogatrip.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .img-ct img {
+            width: 1600px;
+            height: 800px;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            min-height: 800px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        .img-ct {
+            display: flex;
+            position: absolute;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            background-color: #000;
+            opacity: 0.3;
+            font-size: 30px;
+            color: #fff;
+            padding: 4px;
+            text-decoration: none;
+            display: none;
+        }
+
+        .arrow.active {
+            display: block;
+        }
+
+        .arrow:hover {
+            opacity: 0.5;
+        }
+
+        .pre {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .bullet {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%
+        }
+
+        .bullet > li {
+            width: 14px;
+            height: 14px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .bullet > li.active {
+            background-color: #FF6905;
+        }
+    </style>
+</head>
+<body>
+<div id="head-wrapper">
+    <div class="carousel">
+        <ul class="img-ct">
+            <li data-id="0"><a href="#"><img src="travel.png"></a></li>
+            <li data-id="1"><a href="#"><img
+                    src="http://www.55167.com/upload//1499425239_59570b76cb.jpg"></a></li>
+            <li data-id="2"><a href="#"><img
+                    src="https://www.wenba.ca/uploads/questions/20170517/4ec5ae91881b086c51ff90b2be9b700d.jpg"></a></li>
+            <li data-id="3"><a href="#"><img
+                    src="http://shenzhen.southcn.com/s/images/attachement/jpg/site4/20160111/28b2bd187e0017fd4b4a29.jpg"></a>
+            </li>
+            <li data-id="4"><a href="#"><img src="http://99h1.com/wp-content/uploads/2017/05/49.jpg"></a></li>
+        </ul>
+        <a href="#" class="pre arrow"><</a>
+        <a href="#" class="next arrow">></a>
+        <ul class="bullet">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="topbar">
+        <div class="logo">
+            <a href="#">Soga Traveling</a>
+        </div>
+        <ul class="navbar">
+            <li><a href="#page2">SCENERY</a></li>
+            <li><a href="#page3">SHARE</a></li>
+            <li><a href="#page4">GROUPS</a></li>
+            <li><a href="#page5">CONTACT</a></li>
+            <li><a href="#">MORE</a></li>
+        </ul>
+    </div>
+    <header>
+        <p>Welcome To Join Us!</p>
+        <p>LET'S TRAVEL</p>
+        <p>TOGETHER</p>
+        <a href="#">JUST DO IT</a>
+    </header>
+</div>
+<script>
+    var Carousel = (function () {
+        function _Carousel($container) {
+            this.$container = $container;
+            this.init();
+            this.autoPlay();
+            this.bind();
+        }
+
+        _Carousel.prototype.init = function () {
+            this.$imgCt = this.$container.find($('.img-ct'));
+            this.$imgs = this.$container.find($('.img-ct > li'));
+            this.$next = this.$container.find($('.next'));
+            this.$pre = this.$container.find($('.pre'));
+            this.$bullet = this.$container.find($('.bullet > li'));
+            this.$arrow = this.$container.find($('.arrow'));
+
+            this.clock = null;
+            this.isAnimate = false;
+            this.pageIndex = 0;
+            this.imgWidth = this.$imgs.width();
+            this.imgCount = this.$imgs.length;
+
+            this.$imgCt.append(this.$imgs.first().clone());
+            this.$imgCt.prepend(this.$imgs.last().clone());
+            this.$imgCt.css({left: -this.imgWidth});
+        };
+        _Carousel.prototype.bind = function () {
+            var _this = this;
+            this.$next.on('click', function (e) {
+                e.preventDefault();
+                _this.playNext(1);
+            });
+
+            this.$pre.on('click', function (e) {
+                e.preventDefault();
+                _this.playPre(1);
+            });
+
+            this.$bullet.on('click', function () {
+                var bulletIndex = $(this).index();
+                if (bulletIndex > _this.pageIndex) {
+                    _this.playNext(bulletIndex - _this.pageIndex);
+                } else if (bulletIndex < _this.pageIndex) {
+                    _this.playPre(_this.pageIndex - bulletIndex);
+                }
+            });
+
+            this.$container.on('mouseenter', function () {
+                _this.stopAuto();
+                _this.$arrow.addClass('active')
+            });
+
+            this.$container.on('mouseleave', function () {
+                _this.autoPlay();
+                _this.$arrow.removeClass('active');
+            });
+        };
+        _Carousel.prototype.playNext = function (lenth) {
+            var _this = this;
+            if (this.isAnimate) return;
+            this.isAnimate = true;
+            this.$imgCt.animate({
+                left: '-=' + lenth * _this.imgWidth
+            }, function () {
+                _this.pageIndex += lenth;
+                if (_this.pageIndex === _this.imgCount) {
+                    _this.pageIndex = 0;
+                    _this.$imgCt.css({left: -_this.imgWidth});
+                }
+                _this.setBullet();
+                _this.isAnimate = false;
+            });
+        };
+        _Carousel.prototype.playPre = function (lenth) {
+            var _this = this;
+            if (this.isAnimate) return;
+            this.isAnimate = true;
+            this.$imgCt.animate({
+                left: '+=' + lenth * _this.imgWidth
+            }, function () {
+                _this.pageIndex -= lenth;
+                if (_this.pageIndex < 0) {
+                    _this.pageIndex = _this.imgCount - 1;
+                    _this.$imgCt.css({left: -_this.imgWidth * _this.imgCount});
+                }
+                _this.setBullet();
+                _this.isAnimate = false;
+            });
+        };
+        _Carousel.prototype.setBullet = function () {
+            this.$bullet.removeClass('active').eq(this.pageIndex).addClass('active');
+        };
+        _Carousel.prototype.autoPlay = function () {
+            var _this = this;
+            this.clock = setInterval(function () {
+                _this.playNext(1);
+            }, 3000);
+        };
+        _Carousel.prototype.stopAuto = function () {
+            var _this = this;
+            clearInterval(_this.clock);
+        };
+
+        return {
+            init: function ($container) {
+                $container.each(function (index, node) {
+                    new _Carousel($(node));
+                });
+            }
+        };
+    })();
+
+    Carousel.init($('.carousel'));
+
+</script>
+</body>
+</html>

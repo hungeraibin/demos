@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="src/css/index.css">
+</head>
+<body>
+
+</body>
+
+<script src="src/js/lib/bower_components/requirejs/require.js"></script>
+<script>
+    requirejs.config({
+        baseUrl: "src/js",
+        paths: {
+            'jquery': 'lib/bower_components/jquery/dist/jquery.min'
+        }
+    });
+    // 加载入口模块
+    requirejs(['app/index']);
+</script>
+</html>

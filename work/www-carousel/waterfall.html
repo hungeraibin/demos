@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="scenery.css">
+</head>
+<body>
+<div id="scenery-wrapper">
+    <a name="page2"></a>
+    <h1>TO ENJOY SCENERY</h1>
+    <p>explore the world with your hand</p>
+    <ul class="img-container">
+        <li class="h1">
+            <img src="img/bali.png" alt="bali">
+            <p>India Bali</p>
+            <p>The Sea Island</p>
+        </li>
+        <li class="h2">
+            <img src="img/london.png" alt="london">
+            <p>England London</p>
+            <p>Bridge Is Falling Down</p>
+        </li>
+
+        <li class="h3">
+            <img src="img/Sydney.png" alt="sydney">
+            <p>Australia Sydney</p>
+            <p>The Opera House</p>
+        </li>
+        <li class="h1">
+            <img src="img/china.png" alt="china">
+            <p>China Beijing</p>
+            <p>The Great Wall</p>
+        </li>
+        <li class="h2">
+            <img src="img/las.png" alt="las">
+            <p>America Las Vegas</p>
+            <p>The Prosperous City</p>
+        </li>
+        <li class="h3">
+            <img src="img/Bangkok.png" alt="bangkok">
+            <p>Thailand Bangkok</p>
+            <p>The Shwenandaw Kyaung</p>
+        </li>
+    </ul>
+    <div class="load-more">
+        <button>加载更多</button>
+    </div>
+</div>
+</body>
+<script>
+
+
+    function WaterFall($ct) {
+        var _this = this;
+        this.$ct = $ct;
+        this.columnLength = parseInt(this.$ct.width() / this.$ct.find('li').width());
+        this.imgArr = [];
+        for (var i = 0; i < this.columnLength; i++) {
+            this.imgArr[i] = 0;
+        }
+
+        this.$ct.find('li').each(function (index, li) {
+            _this.init($(li));
+        })
+        this.bind();
+    }
+
+    WaterFall.prototype.init = function ($node) {
+        var _this = this;
+        var minHeight = Math.min.apply(null, this.imgArr);
+        var minIndex = this.imgArr.indexOf(minHeight);
+        $node.css({
+            top: _this.imgArr[minIndex],
+            left: minIndex * $node.outerWidth(true)
+        });
+
+        this.imgArr[minIndex] += $node.outerHeight(true);
+        _this.$ct.height(Math.max.apply(null, this.imgArr));
+
+    };
+
+    WaterFall.prototype.bind = function () {
+        var _this = this;
+        $('.load-more button').on('click', function () {
+            var urls = _this.getUrls(3);
+            _this.render(urls);
+           /* $.each(urls, function (index, url) {
+                console.log(url)
+                _this.render(url);
+            });*/
+        });
+    };
+
+    WaterFall.prototype.render = function (url) {
+        var _this = this;
+        var $html = $('<li class="h3"><img src="' + url[0] + '"><p>Hunger</p> <p>Stay hungery</p> </li>');
+        $html.find('img').on('load', function () {
+            _this.$ct.append($html);
+            //console.log($node);
+            _this.init($html);
+        });
+
+        var $html1 = $('<li class="h1"><img src="' + url[1] + '"><p>Aibin</p> <p>Stay foolish</p> </li>');
+        $html1.find('img').on('load', function () {
+            _this.$ct.append($html1);
+            //console.log($node);
+            _this.init($html1);
+        });
+
+        var $html2 = $('<li class="h2"><img src="' + url[2] + '"><p>Hunger Aibin</p> <p>Stay hungery. Stay foolish</p> </li>');
+        $html1.find('img').on('load', function () {
+            _this.$ct.append($html2);
+            //console.log($node);
+            _this.init($html2);
+        });
+    }
+
+    WaterFall.prototype.getUrls = function (num) {
+        var urls = [];
+        var width = 360, height = 240;
+        for (var i = 0; i < num; i++) {
+            urls.push("https://unsplash.it/" + width + "/" + height + "/?random");
+        }
+        return urls;
+    };
+
+
+    new WaterFall($('.img-container'));
+
+
+</script>
+</html>

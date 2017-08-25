@@ -2,19 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac8b7cf8-a302-46c5-8879-ba9ab5d5aa4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/calendar/calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/calendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/carousel-fade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/carousel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/exposure.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/tab-slide.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/moudle/tab.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../test/GoTop.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/Bangkok.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/Sydney.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/bali.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/cat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/china.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/connect.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/contact.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/food.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/gui.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/guo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/hotel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/las.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/london.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/love.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/plane.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/travel.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/img/travel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/travel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/Bangkok.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/Sydney.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/bali.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/cat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/china.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/connect.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/contact.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/food.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/gui.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/guo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/hotel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/las.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/london.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/love.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/plane.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/travel.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/img/travel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/dist/js/index.merge.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/css/index.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/app/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/com/tab.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/lib/jquery-3.2.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/lib/require.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../test/www/src/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/GoTop.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/carousel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/scenery.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/sogatrip.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www-carousel/waterfall.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/dist/js/index.merge.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icfont/iconfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/carousel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/contact.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/gotop.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/groups.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/scenery.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/share.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/css/sogatrip.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/app/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/build.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/com/carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/com/gotop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/com/waterfall.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/lib/jquery-3.2.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/lib/require.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/src/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/../test/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/.idea/test.iml" afterPath="$PROJECT_DIR$/../test/.idea/test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../test/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/BarrelLayout/barrel.html" afterPath="$PROJECT_DIR$/../test/BarrelLayout/barrel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/lazy-loading/lazy.html" afterPath="$PROJECT_DIR$/../test/lazy-loading/lazy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/tab/tab-slide-updown.html" afterPath="$PROJECT_DIR$/../test/tab/tab-slide-updown.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../test/tab/jQuery-tab.html" afterPath="$PROJECT_DIR$/../test/tab/jQuery-tab.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -35,57 +96,14 @@
     <favorites_list name="work" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="carousel.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/moudle/carousel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="158" column="35" lean-forward="false" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="carousel-fade.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/moudle/carousel-fade.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/moudle/modal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calendar.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/moudle/calendar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="365" column="0" lean-forward="true" selection-start-line="365" selection-start-column="0" selection-end-line="365" selection-end-column="0" />
-              <folding>
-                <marker date="1503554007188" expanded="true" signature="5256:5268" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -95,24 +113,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/icon/iconfont.html" />
-        <option value="$PROJECT_DIR$/trip/sogatrip.css" />
-        <option value="$PROJECT_DIR$/trip/trip.html" />
-        <option value="$PROJECT_DIR$/trip/groups.css" />
-        <option value="$PROJECT_DIR$/icon/iconfont.css" />
-        <option value="$PROJECT_DIR$/form/beatiful-form.html" />
-        <option value="$PROJECT_DIR$/form/beatiful.css" />
-        <option value="$PROJECT_DIR$/JSON/task5-1.html" />
-        <option value="$PROJECT_DIR$/MathArryDate/array.html" />
-        <option value="$PROJECT_DIR$/MathArryDate/date.html" />
-        <option value="$PROJECT_DIR$/MathArryDate/math.html" />
-        <option value="$PROJECT_DIR$/event.html" />
-        <option value="$PROJECT_DIR$/vertical/event2.html" />
-        <option value="$PROJECT_DIR$/event/event2.html" />
-        <option value="$PROJECT_DIR$/event/event.html" />
-        <option value="$PROJECT_DIR$/event/event3-1.html" />
-        <option value="$PROJECT_DIR$/event/event3-4.html" />
-        <option value="$PROJECT_DIR$/event/event3.html" />
         <option value="$PROJECT_DIR$/event/event3-2.html" />
         <option value="$PROJECT_DIR$/closure/closure.html" />
         <option value="$PROJECT_DIR$/task6.html" />
@@ -146,6 +146,24 @@
         <option value="$PROJECT_DIR$/moudle/carousel.html" />
         <option value="$PROJECT_DIR$/moudle/carousel-fade.html" />
         <option value="$PROJECT_DIR$/moudle/calendar.html" />
+        <option value="$PROJECT_DIR$/www/src/js/main.js" />
+        <option value="$PROJECT_DIR$/www/src/css/contact.css" />
+        <option value="$PROJECT_DIR$/www-carousel/carousel.html" />
+        <option value="$PROJECT_DIR$/www-carousel/sogatrip.css" />
+        <option value="$PROJECT_DIR$/www-carousel/scenery.css" />
+        <option value="$PROJECT_DIR$/www-carousel/GoTop.html" />
+        <option value="$PROJECT_DIR$/www/src/css/carousel.css" />
+        <option value="$PROJECT_DIR$/www/src/js/com/carousel.js" />
+        <option value="$PROJECT_DIR$/www/src/js/app/index.js" />
+        <option value="$PROJECT_DIR$/www/src/js/com/gotop.js" />
+        <option value="$PROJECT_DIR$/www/src/css/scenery.css" />
+        <option value="$PROJECT_DIR$/www/src/css/gotop.css" />
+        <option value="$PROJECT_DIR$/www/src/css/share.css" />
+        <option value="$PROJECT_DIR$/www/src/css/groups.css" />
+        <option value="$PROJECT_DIR$/www/src/css/sogatrip.css" />
+        <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www-carousel/waterfall.html" />
+        <option value="$PROJECT_DIR$/www/src/js/com/waterfall.js" />
       </list>
     </option>
   </component>
@@ -185,6 +203,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,16 +216,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="work" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="G:/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="C:\Users\lenovo\AppData\Roaming\npm\node_modules\eslint" />
@@ -216,19 +288,19 @@
     <property name="settings.editor.splitter.proportion" value="0.28850666" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\repository\demos\work\www\src\css" />
+      <recent name="F:\repository\demos\work\www-carousel" />
+      <recent name="F:\repository\demos\work\www" />
+      <recent name="F:\repository\demos\work" />
+      <recent name="F:\repository\demos\work\weather" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\repository\demos\work\interview" />
       <recent name="F:\repository\demos\work" />
       <recent name="F:\repository\demos\work\closure" />
       <recent name="F:\repository\demos\work\event" />
       <recent name="F:\repository\demos\work\trip\img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\repository\demos\work\weather" />
-      <recent name="F:\repository\demos\work\trip\icfont" />
-      <recent name="F:\repository\demos\work\trip" />
-      <recent name="F:\repository\demos\work\resume\icon" />
-      <recent name="F:\repository\demos\work\resume" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.a.html">
@@ -369,12 +441,13 @@
       <workItem from="1503299431010" duration="14157000" />
       <workItem from="1503365407589" duration="1189000" />
       <workItem from="1503466662211" duration="30731000" />
-      <workItem from="1503541240927" duration="8301000" />
+      <workItem from="1503541240927" duration="8896000" />
+      <workItem from="1503635510823" duration="26395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="411618000" />
+    <option name="totallyTimeSpent" value="438608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,9 +456,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1582618" sideWeight="0.493266" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16040772" sideWeight="0.493266" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32881355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -454,160 +527,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/event/event3-2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event/event3-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/form/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/form/beatiful-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/form/beatiful.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/icon/iconfont.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/icon/iconfont.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/icon/sprites.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/icon/icon.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interview/a.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/j-ajax/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/j-ajax/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery/task1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery/task1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery/task1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery/task3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4554">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery/task2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="424" column="0" lean-forward="true" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JSON/task5-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2430">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MathArryDate/math.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MathArryDate/date.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MathArryDate/array.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layout/task11-1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5250">
-          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/layout/task11-2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -636,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trip/scenery.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trip/share.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1524">
@@ -653,13 +565,6 @@
     <entry file="file://$PROJECT_DIR$/trip/sogatrip.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2964">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trip/trip.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -713,73 +618,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weather/wheather.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="137" column="0" lean-forward="true" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waterfall/waterfall.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/waterfall/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="98" column="13" lean-forward="false" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/barrellayout/barrel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery/tab-slideLR.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Carousel/Carousel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moudle/modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/moudle/exposure.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="996">
           <caret line="186" column="0" lean-forward="false" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/moudle/tab.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2844">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -802,7 +644,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/moudle/carousel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="4740">
           <caret line="158" column="35" lean-forward="false" selection-start-line="158" selection-start-column="35" selection-end-line="158" selection-end-column="35" />
           <folding />
         </state>
@@ -816,6 +658,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/moudle/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -823,6 +673,251 @@
           <folding>
             <marker date="1503554007188" expanded="true" signature="5256:5268" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weather/wheather.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moudle/tab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/css/contact.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trip/trip.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Carousel/Carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/tab-slideLR.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="25" column="26" lean-forward="false" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www-carousel/travel.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterfall/waterfall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="64" column="56" lean-forward="false" selection-start-line="64" selection-start-column="56" selection-end-line="64" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterfall/news.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2406">
+          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/barrellayout/barrel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www-carousel/scenery.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www-carousel/sogatrip.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/css/carousel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="75" column="1" lean-forward="false" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/js/com/tab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www-carousel/carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="242" column="0" lean-forward="false" selection-start-line="242" selection-start-column="0" selection-end-line="242" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www-carousel/GoTop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/js/com/gotop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/css/scenery.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/css/gotop.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/js/com/carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/css/share.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/css/sogatrip.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="57" column="10" lean-forward="false" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/js/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www-carousel/waterfall.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="125" column="20" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/js/com/waterfall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trip/scenery.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/j-ajax/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/js/app/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/src/css/groups.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
