@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        h1 {
+            font-size: 14px;
+        }
+
+        .panel {
+            width: 100px;
+            border: 1px solid red;
+        }
+
+        .panel > h1 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .panel > p {
+            word-break: break-all;
+            white-space: pre;
+            text-shadow: 2px 2px 3px red, 4px 6px 1px red;;
+        }
+
+        .button {
+            display: inline-block;
+            color: #333;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            padding: 3px;
+            border-radius: 5px;
+            transition: all .5s;
+        }
+        .button:hover {
+            background-color: #03B3FF;
+            color: white;
+        }
+        .button:active {
+            background-color: #025AA5;
+            color: white;
+        }
+
+        .circle {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50px 50px 0 0;
+            box-shadow: 4px 8px 6px red;
+        }
+        .box {
+            height: 100%;
+            background: url("http://www.51pptmoban.com/d/file/2015/07/25/8f73931cfd434ee065afeee3c6ec5109.jpg") 0 0 no-repeat;
+            background-size: cover;
+        }
+        .box1 {
+            margin-top: 20px;
+            width: 200px;
+            height: 50px;
+            background: linear-gradient(to right, red, blue);
+            transition: 1s;
+
+        }
+        .box1:hover {
+            width: 50px;
+        }
+        .box2 {
+            margin-top: 20px;
+            width: 200px;
+            height: 50px;
+            background-image: radial-gradient(circle, red, blue);
+        }
+        
+        @keyframes rainbow {
+            0% {background: #c00;}
+            50% {background: orange; width: 300px; height: 100px}
+            100% {background: yellowgreen;}
+        }
+        .box3 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid #cccccc;
+        }
+        .box3:hover {
+            animation: 3s rainbow;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="panel">
+    <h1>我是标题 可以省略部分</h1>
+    <p>hello worldddddd nihao</p>
+</div>
+<a href="#" class="button">点我</a>
+<div class="circle"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

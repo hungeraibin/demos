@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡色效果</title>
+    <style>
+        .cover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url(http://img05.tooopen.com/images/20160121/tooopen_sy_155168162826.jpg) center center no-repeat;
+            background-size: cover;
+        }
+        .cover:before {
+            content: '';
+            display: block;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom right, rgba(0,0,255,0), rgba(0,0,255,0.8));
+        }
+        .cover:after {
+            content: '';
+            display: block;
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom left, rgba(187, 61, 187,0), rgba(187, 61, 187,0.8));
+        }
+    </style>
+</head>
+<body>
+<div class="cover"></div>
+</body>
+</html>

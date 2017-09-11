@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+    <style>
+        body {
+            background: rgb(13, 206, 203);
+        }
+        .loading {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 100px auto;
+            border-top: 15px solid rgba(255, 255, 255, 0.2);
+            border-right: 15px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 15px solid rgba(255, 255, 255, 0.2);
+            border-left: 15px solid #ffffff;
+            animation: 1s load infinite linear;
+        }
+        @keyframes load {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="loading"></div>
+    </main>
+</body>
+</html>

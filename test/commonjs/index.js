@@ -20,7 +20,6 @@ require(['carousel', 'tab', 'lazy'], function (Carousel, Tab, Lazy) {
 
 
 
-
 //2 common.js规范
 var carousel = require('./carousel');
 new carousel('.carousel-ct');

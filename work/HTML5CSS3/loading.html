@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+    <style>
+        .loading {
+            width: 5px;
+            height: 30px;
+            background-color: #4E443C;
+            position: relative;
+        }
+        .loading:before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 30px;
+            background-color: #4E443C;
+            position: relative;
+            left: 10px;
+        }
+        .loading:after {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 30px;
+            background-color: #4E443C;
+            position: absolute;
+            top: 0;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="loading">
+
+</div>
+</body>
+</html>
